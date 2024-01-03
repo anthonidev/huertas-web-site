@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { BarMoneyIcon } from '../icons/Icons';
+import { BarMoneyIcon, BeachIcon, CampoIcon } from '../icons/Icons';
 
 export const Featured = () => {
   return (
@@ -10,13 +10,11 @@ export const Featured = () => {
           #TULOTEAHORA
         </h1>
         <p className='mx-auto mt-4 flex w-3/4 items-center justify-center rounded-full bg-white px-4 py-2  text-base font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl  md:py-4 md:text-4xl  2xl:py-6 2xl:text-5xl'>
-          <BarMoneyIcon className='text-pri mr-2  hidden lg:block' width={85} />
+          <CampoIcon className='mr-2 hidden  text-pri lg:block ' width={85} />
+
           <span className='text-pri'>CAMPO O </span>
-          <span className='text-sec ml-2'>PLAYA </span>
-          <BarMoneyIcon
-            className='text-sec mr-2  hidden lg:block '
-            width={85}
-          />
+          <span className='ml-2 text-sec'>PLAYA </span>
+          <BeachIcon className='mr-2 hidden  text-sec lg:block' width={85} />
         </p>
       </section>
       <figure>

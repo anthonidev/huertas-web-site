@@ -71,7 +71,7 @@ export const Navbar = () => {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className='inline-flex items-center px-2 pt-1 text-xl font-light text-white hover:bg-green-700'
+                      className='inline-flex items-center px-2 pt-1 text-xl font-light text-white '
                     >
                       {link.title}
                     </Link>
@@ -100,7 +100,7 @@ export const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green-700'
+                    className='block rounded-md px-3 py-2 text-base font-medium text-white '
                   >
                     {link.title}
                   </Link>

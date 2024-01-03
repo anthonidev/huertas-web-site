@@ -14,12 +14,12 @@ export const HowPay = () => {
           </h2>
           <figure className='flex text-5xl   2xl:text-6xl'>
             <CustomTextImage
-              className=' text-[75px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
+              className=' text-[50px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
               image='/imgs/inver.webp'
               text='INVER'
             />
             <CustomTextImage
-              className=' text-[75px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
+              className=' text-[50px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
               image='/imgs/sion!.webp'
               text='SIÓN!'
             />
