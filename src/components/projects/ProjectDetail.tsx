@@ -33,8 +33,12 @@ const ProjectDetail = ({ project }: Props) => {
               height={800}
               alt={project.title}
             />
-            <MapProject />
-            <Stats areas={project.areas} />
+            <MapProject
+              km={project.km}
+              location={project.location}
+              photo_map={project.photo_map}
+              title={project.title}
+            />
           </div>
         }
         right={

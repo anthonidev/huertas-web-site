@@ -7,8 +7,11 @@ type Props = {
 
 const Stats = ({ areas }: Props) => {
   return (
-    <div>
-      <p>ATRIBUTOS DEL CONDOMINIO</p>
+    <div className='py-10'>
+      <p className='mb-5  text-center text-2xl text-gray-700 md:text-3xl lg:text-4xl'>
+        <span className='font-extrabold'>ATRIBUTOS </span>
+        DEL CONDOMINIO
+      </p>
       <div className='grid grid-cols-3 gap-4'>
         {areas.map(({ icon, id, alt }) => (
           <div key={id} className='flex flex-col items-center'>
@@ -18,7 +21,7 @@ const Stats = ({ areas }: Props) => {
               height={200}
               alt={alt}
             />
-            <span>{alt}</span>
+            <span className='text-center text-xl  text-pri'>{alt}</span>
           </div>
         ))}
       </div>
