@@ -1,26 +1,17 @@
 import { getProjects } from '@/components/actions/getProjects';
-import {
-  AviableProjects,
-  FamilyHuertas,
-  Featured,
-  GetLandSteps,
-  HowPay,
-  TrustHuertas,
-} from '@/components/home';
+import { AviableProjects } from '@/components/home';
+import { Featured } from '@/components/projects';
 import SkeletonCard from '@/components/shared/skeleton/Skeleton';
 import { Suspense } from 'react';
+export const dynamic = 'force-dynamic';
 
-export default function Home() {
+export default function ProjectsPage() {
   return (
     <main>
       <Featured />
-      <HowPay />
       <Suspense fallback={<SkeletonCard />}>
         <ProjectsAsync />
       </Suspense>
-      <FamilyHuertas />
-      <TrustHuertas />
-      <GetLandSteps />
     </main>
   );
 }
