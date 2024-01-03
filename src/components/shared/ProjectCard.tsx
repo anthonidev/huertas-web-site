@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { HandMoneyIcon } from '../icons/Icons';
 import cl from 'clsx';
 import Link from 'next/link';
+import FormatCoin from '@/utils/coin';
 type Props = {
   project: Project;
   par: boolean;
@@ -29,11 +30,11 @@ const ProjectCard = ({
         <header className='mx-5 flex justify-end  '>
           <h3
             className={cl(
-              'inline-flex items-center rounded-t-3xl   px-4  text-xs text-white',
+              'inline-flex items-center rounded-t-3xl px-4   text-lg   text-white',
               par ? 'bg-pri' : 'bg-sec'
             )}
           >
-            <HandMoneyIcon className=' text-white ' width={40} hanging={40} />
+            <HandMoneyIcon className='  text-white ' width={40} hanging={40} />
             Lotes desde {min_area}m²
           </h3>
         </header>
@@ -57,24 +58,25 @@ const ProjectCard = ({
           />
           <figcaption className='absolute bottom-0 flex w-full justify-between '>
             <div className='basis-1/2'>
-              <div className='rounded-tr-xl bg-pri   text-center text-white'>
+              <div className='rounded-tr-xl bg-pri py-2  text-center text-white'>
                 <span className='text-xs'>Inicial desde</span> <br />
-                <span className='text-lg font-extrabold'>{initial}</span>
+                <span className='text-xl font-extrabold md:text-2xl'>
+                  {FormatCoin(initial, currency)}
+                </span>
               </div>
-              <div className=' rounded-bl-xl bg-sec  text-center text-white'>
+              <div className=' rounded-bl-xl bg-sec py-2 text-center text-white'>
                 <span className='text-xs'>Desde</span> <br />
-                <span className='text-lg font-extrabold'>
-                  {currency}
-                  {price}
+                <span className='text-xl font-extrabold md:text-2xl'>
+                  {FormatCoin(price, currency)}
                 </span>
               </div>
             </div>
             <div className='mr-5 flex basis-1/2 flex-col items-center justify-center text-white'>
-              <div className='inline-flex items-center justify-center text-center  font-extrabold text-white'>
+              <div className='inline-flex items-center justify-center text-center text-3xl  font-extrabold text-white'>
                 <MapPinIcon className='h-5 w-5 ' />
                 {location}
               </div>
-              <span className='text-[9px]'>{km}</span>
+              <span className='text-base'>{km}</span>
             </div>
           </figcaption>
         </figure>

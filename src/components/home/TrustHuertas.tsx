@@ -8,22 +8,23 @@ type Props = {};
 export const TrustHuertas = (props: Props) => {
   return (
     <main
-      className=' bg-pattern flex min-h-screen items-center justify-center '
+      className=' flex min-h-screen items-center justify-center bg-pattern '
       id='confia-huertas'
     >
-      <section className=' mx-auto flex   max-w-7xl justify-evenly  space-x-20  px-4 sm:px-6 lg:px-8'>
-        <header className='flex flex-col items-start justify-center space-y-16 '>
-          <h2 className='border-pri-200  text-sec-100 mt-2 text-start text-5xl font-extrabold uppercase'>
+      <section className=' mx-auto mt-20 flex max-w-7xl flex-col  justify-evenly px-4 sm:px-6  md:mt-10  md:space-x-20 lg:flex-row lg:px-8'>
+        <header className='my-10 flex flex-col items-start justify-center space-y-16  '>
+          <h2 className='mt-2 border-pri-200 text-start text-3xl font-extrabold uppercase text-sec-100  md:text-4xl lg:text-5xl xl:text-6xl'>
             CONFÍA <br />
-            <span className=' border-pri text-pri-200 border-b-8'>EN HUE</span>
+            <span className=' border-b-8 border-pri text-pri-200'>EN HUE</span>
             RTAS
           </h2>
-          <p className='text-pri text-2xl font-light tracking-wider'>
+
+          <p className='text-xl font-light tracking-wider text-pri md:text-2xl'>
             Invierte con confianza en un futuro <br /> seguro para tu familia.{' '}
             <br /> ¡Ahora tener
             <span className=' font-extrabold'> TÚ LOTE ES ALTOKE!</span>
           </p>
-          <button className='bg-pri inline-flex items-center  rounded-full px-4 py-3  text-white'>
+          <button className=' inline-flex items-center rounded-full bg-pri px-4 py-3  text-white'>
             Conoce más{' '}
             <ArrowRightIcon
               className='ml-3 h-5 w-5  text-white'
@@ -31,7 +32,7 @@ export const TrustHuertas = (props: Props) => {
             />
           </button>
         </header>
-        <div className='text-pri-200 grid grid-cols-1 justify-stretch gap-10 lg:grid-cols-2'>
+        <div className='grid grid-cols-1 justify-stretch gap-10 text-pri-200 lg:grid-cols-2'>
           {stats.map((stat, index) => (
             <StatCard
               key={index}

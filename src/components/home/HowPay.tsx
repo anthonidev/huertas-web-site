@@ -5,36 +5,41 @@ export const HowPay = () => {
   return (
     <article id='como-pagar' className='bg-pattern  pt-20 '>
       <section className=' mx-auto flex h-screen max-w-7xl flex-col items-center  justify-evenly bg-cover bg-center px-4 sm:px-6 lg:px-8'>
-        <header className='text-pri pt-20 text-5xl font-light uppercase '>
-          <h2 className=' text-pri-200'>
-            <span className=' text-7xl font-extrabold  '>¡Que hoy</span>
+        <header className='pt-20  font-light uppercase text-pri '>
+          <h2 className='text-base text-pri-200 md:text-xl lg:text-3xl xl:text-5xl'>
+            <span className=' text-2xl font-extrabold md:text-4xl lg:text-5xl xl:text-7xl'>
+              ¡Que hoy
+            </span>
             sea tu mejor
           </h2>
-          <figure className='flex'>
+          <figure className='flex text-5xl   2xl:text-6xl'>
             <CustomTextImage
-              className='text-[175px] font-[1000]'
+              className=' text-[75px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
               image='/imgs/inver.webp'
               text='INVER'
             />
             <CustomTextImage
-              className='text-[175px] font-[1000]'
+              className=' text-[75px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
               image='/imgs/sion!.webp'
               text='SIÓN!'
             />
           </figure>
         </header>
         <main>
-          <p className='text-pri-200 py-10 text-center text-6xl font-bold uppercase tracking-tight'>
+          <p className='py-10 text-center  text-2xl font-bold uppercase tracking-tight text-pri-200 md:text-4xl lg:text-5xl xl:text-6xl'>
             ¿PORQUÉ
-            <span className='bg-sec mx-3 px-2 font-extrabold uppercase text-white'>
+            <span className='mx-3 bg-sec px-2 font-extrabold uppercase text-white'>
               COMPRAR
             </span>
             UN LOTE?
           </p>
-          <section className='text-pri-200 mt-10 grid grid-cols-2 gap-4 text-justify lg:grid-cols-4'>
+          <section className='mt-10 grid grid-cols-2 gap-4 text-justify text-pri-200 lg:grid-cols-4'>
             {howtopay.map(({ paragraph, icon: Icon }, index) => (
-              <p key={index} className='text-pri-200 text-center text-3xl'>
-                <Icon className='text-pri-200 mx-auto mb-4 h-32 w-32' />
+              <p
+                key={index}
+                className='text-center  text-lg text-pri-200 md:text-xl lg:text-2xl xl:text-3xl'
+              >
+                <Icon className='mx-auto mb-4 h-32 w-32 text-pri-200' />
                 {paragraph.map(({ bold, text }, i) => (
                   <span
                     key={i}

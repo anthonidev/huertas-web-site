@@ -5,15 +5,18 @@ type Props = {};
 
 export const GetLandSteps = (props: Props) => {
   return (
-    <main className='bg-pattern min-h-screen' id='obten-tu-lote'>
+    <main className='min-h-screen bg-pattern' id='obten-tu-lote'>
       <header
         style={{ backgroundImage: 'url(/imgs/getLand.webp)' }}
         className='min-h-screen items-end bg-cover bg-center bg-no-repeat '
       >
         <div className='  mx-auto   max-w-7xl '>
-          <div className='from-sec-100 to-pri flex max-w-lg flex-col items-start justify-start space-y-20 rounded-b-3xl  bg-gradient-to-t px-4 py-16  sm:px-6 lg:px-8'>
-            <h3 className='mx-auto text-7xl font-extrabold uppercase text-white'>
-              <span className='text-6xl font-light'>OBTEN TU</span> <br />
+          <div className='mx-5 flex max-w-lg flex-col items-start justify-start space-y-20 rounded-b-3xl bg-gradient-to-t from-sec-100  to-pri px-4 py-16  sm:px-6 lg:px-8'>
+            <h3 className='mx-auto  text-4xl font-extrabold uppercase text-white md:text-5xl xl:text-6xl 2xl:text-7xl'>
+              <span className=' text-2xl font-light md:text-3xl xl:text-4xl 2xl:text-6xl'>
+                OBTEN TU
+              </span>{' '}
+              <br />
               LOTE EN <br />3 PASOS
             </h3>
             <div className='mx-auto flex flex-col justify-center  space-y-10'>
@@ -32,7 +35,7 @@ export const GetLandSteps = (props: Props) => {
               ))}
             </div>
           </div>
-          <button className=' bg-sec   my-10 ml-[140px] p-4 text-white'>
+          <button className=' my-10 ml-[140px] bg-sec   px-6 py-4 text-xl font-extrabold text-white'>
             MÁS INFORMACIÓN
           </button>
         </div>
