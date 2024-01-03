@@ -60,7 +60,9 @@ export const Navbar = () => {
             <div className='flex h-24 justify-between'>
               <div className='flex'>
                 <div className='flex h-24 shrink-0 items-center'>
-                  <LogoIcon height={80} width={200} className='text-white' />
+                  <Link href='/'>
+                    <LogoIcon height={80} width={200} className='text-white' />
+                  </Link>
                 </div>
               </div>
               <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>

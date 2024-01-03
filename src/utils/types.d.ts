@@ -27,4 +27,5 @@ interface ProjectDetail extends Project {
 interface Area {
   id: string;
   icon: string;
+  alt: string;
 }
