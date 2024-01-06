@@ -22,10 +22,15 @@ interface ProjectDetail extends Project {
   tertiary_color: string;
   slogan: string;
   separate: number;
-  gallery: string[];
+  gallery: Gallery[];
 }
 interface Area {
   id: string;
   icon: string;
   alt: string;
+}
+
+interface Gallery {
+  id: string;
+  image: string;
 }

@@ -4,7 +4,7 @@
 
 @layer components {
   .title-banner {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl;
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl;
   }
 }
 

@@ -5,6 +5,8 @@ import Form from './detail/Form';
 import Stats from './detail/Stats';
 import Image from 'next/image';
 import MapProject from './detail/MapProject';
+import { ObrasIcon } from '../icons/Icons';
+import Galllery from './detail/Galllery';
 
 type Props = {
   project: ProjectDetail;
@@ -22,7 +24,15 @@ const ProjectDetail = ({ project }: Props) => {
         location={project.location}
         km={project.km}
         initial={project.initial}
+        primary_color={project.primary_color}
       />
+
+      <Galllery
+        gallery={project.gallery}
+        primary_color={project.primary_color}
+        secondary_color={project.secondary_color}
+      />
+
       <TwoColums
         left={
           <div>

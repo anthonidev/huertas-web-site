@@ -1,8 +1,7 @@
 import FormatCoin from '@/utils/coin';
 import { MapPinIcon } from '@heroicons/react/24/solid';
+import clsx from 'clsx';
 import Image from 'next/image';
-import React from 'react';
-
 type Props = {
   logo: string;
   primary_banner: string;
@@ -12,7 +11,14 @@ type Props = {
   location: string;
   km: string;
   initial: number;
+  primary_color: string;
 };
+
+interface Colors {
+  bg: string;
+  text: string;
+  border: string;
+}
 
 export const BannerPrimary = ({
   logo,
@@ -23,12 +29,33 @@ export const BannerPrimary = ({
   km,
   location,
   price,
+  primary_color,
 }: Props) => {
+  const words = slogan.split(' ');
+  const lastWord = words[words.length - 1];
+  const styleLastWord = words.map((word, index) => {
+    if (word === lastWord) {
+      return (
+        <span
+          key={index}
+          style={{ background: primary_color }}
+          className='px-2'
+        >
+          {word}
+        </span>
+      );
+    }
+    return <span key={index}>{word} </span>;
+  });
   return (
     <header id='featured' className='relative h-screen '>
-      <section className='absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2  transform text-center lg:top-1/3'>
-        <h1 className=' title-banner px-14 font-extrabold uppercase  tracking-tighter text-white'>
-          {slogan}
+      <section className='absolute left-1/2  top-1/2 z-10 -translate-x-1/4 -translate-y-full  transform text-center  lg:top-2/3 lg:-translate-x-1/2 xl:top-1/3 xl:-translate-y-1/2'>
+        <h1
+          className={clsx(
+            'title-banner   font-extrabold uppercase  tracking-tighter text-white '
+          )}
+        >
+          {styleLastWord}
         </h1>
       </section>
       <figure>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import '../styles/globals.css';
 import { Footer, Navbar } from '@/components/navigation';
+import WhatsappButton from '@/components/shared/WhatsappButton';
 
 const inter = Montserrat({ subsets: ['latin'] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WhatsappButton />
       </body>
     </html>
   );
