@@ -29,12 +29,12 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
 
   return (
     <div className='mx-auto max-w-7xl  py-10 '>
-      <div className='relative flex justify-end '>
+      <div className='relative flex flex-col justify-end lg:flex-row '>
         <ObrasIcon
-          className='absolute left-0 h-96 w-96'
+          className='absolute left-0 hidden h-96 w-96 lg:block'
           style={{ color: secondary_color }}
         />
-        <div className='absolute right-0 top-2 flex flex-col items-end p-4 text-4xl font-extrabold'>
+        <div className='right-0 top-2 flex flex-col  items-end p-4 text-4xl font-extrabold lg:absolute'>
           <p className='flex items-center space-x-2'>
             <ObrasIcon className='h-10 w-10' />
             <span style={{ color: secondary_color }}>AVANCE </span>
@@ -57,23 +57,25 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
             Galeria de fotos
           </span>
         </div>
-        <div>
-          <div className='flex space-x-3 py-20'>
-            {viewImages.map((item, index) => (
-              <Image
-                key={index}
-                src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${item.image}`}
-                alt={'gallery'}
-                width={300}
-                height={300}
-              />
-            ))}
-            {gallery.length > 3 && (
-              <button onClick={changeImages}>
-                <ArrowRightCircleIcon className='h-10 w-10' />
-              </button>
-            )}
-          </div>
+        <div
+          className=' flex 
+         space-x-3 overflow-x-auto overflow-y-hidden py-20 
+        '
+        >
+          {viewImages.map((item, index) => (
+            <Image
+              key={index}
+              src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${item.image}`}
+              alt={'gallery'}
+              width={300}
+              height={300}
+            />
+          ))}
+          {gallery.length > 3 && (
+            <button onClick={changeImages}>
+              <ArrowRightCircleIcon className='h-10 w-10' />
+            </button>
+          )}
         </div>
       </div>
     </div>
