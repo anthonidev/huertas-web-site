@@ -13,6 +13,7 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         pattern: 'url("/svg/pattern.svg")',
+        'endless-clouds': 'url("/svg/endless-clouds.svg")',
       },
       colors: {
         pri: {
