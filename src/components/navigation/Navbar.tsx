@@ -3,11 +3,15 @@ import { navigationLinks } from '@/utils/navigation';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { LogoIcon } from '../icons/Icons';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { LogoIcon } from '../icons/Icons';
+import clsx from 'clsx';
 
 export const Navbar = () => {
   const [bgColor, setBgColor] = useState('transparent');
+  const path = usePathname();
+
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
@@ -57,7 +61,7 @@ export const Navbar = () => {
       {({ open }) => (
         <>
           <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-            <div className='flex h-24 justify-between'>
+            <div className='flex  flex-row justify-between sm:flex-col lg:flex-row'>
               <div className='flex'>
                 <div className='flex h-24 shrink-0 items-center'>
                   <Link href='/'>
@@ -71,7 +75,10 @@ export const Navbar = () => {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className='inline-flex items-center px-2 pt-1 text-xl font-light text-white '
+                      className={clsx(
+                        'inline-flex items-center px-2 pt-1 font-light text-white md:text-base lg:text-xl ',
+                        path === link.href && 'my-5 border-b-2 border-white'
+                      )}
                     >
                       {link.title}
                     </Link>

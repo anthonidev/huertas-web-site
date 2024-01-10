@@ -6,7 +6,7 @@ import Image from 'next/image';
 export const ContactForm = () => {
   return (
     <section className='  bg-pattern p-20'>
-      <div className='mx-auto flex w-full max-w-7xl  px-4  sm:px-6 lg:px-8'>
+      <div className='mx-auto flex w-full max-w-7xl flex-col px-4  sm:px-6  md:flex-row lg:px-8'>
         <div className='basis-1/2'>
           <Image
             src='/imgs/contact.png'
