@@ -53,7 +53,7 @@ const ProjectDetail = ({ project }: Props) => {
         }
         right={
           <div>
-            <Form />
+            <Form project={project.id} />
           </div>
         }
       />

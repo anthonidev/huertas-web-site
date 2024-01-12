@@ -34,3 +34,12 @@ interface Gallery {
   id: string;
   image: string;
 }
+
+interface FormContact {
+  firstname: string;
+  lastname: string;
+  email: string;
+  phone: string;
+  message: string;
+  project?: string;
+}

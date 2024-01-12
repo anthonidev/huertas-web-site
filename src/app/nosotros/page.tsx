@@ -1,3 +1,9 @@
+import { Hero } from '@/components/about';
+
 export default function AboutPage() {
-  return <main>Nosotros</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }

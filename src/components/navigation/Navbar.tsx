@@ -8,6 +8,15 @@ import { useEffect, useState } from 'react';
 import { LogoIcon } from '../icons/Icons';
 import clsx from 'clsx';
 
+const sectionIds = [
+  'featured',
+  'como-pagar',
+  'proyectos-disponibles',
+  'familia-huertas',
+  'confia-huertas',
+  'obten-tu-lote',
+];
+
 export const Navbar = () => {
   const [bgColor, setBgColor] = useState('transparent');
   const path = usePathname();
@@ -15,38 +24,18 @@ export const Navbar = () => {
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
-    const featuredSection = document.getElementById('featured')?.offsetTop || 0;
-    const howToPaySection =
-      document.getElementById('como-pagar')?.offsetTop || 0;
-    const projectsSection =
-      document.getElementById('proyectos-disponibles')?.offsetTop || 0;
+    const calculateBackgroundColor = (sectionId: string, color: string) => {
+      const sectionTop = document.getElementById(sectionId)?.offsetTop || 0;
+      if (scrollPosition >= sectionTop) {
+        setBgColor(color);
+      }
+    };
 
-    const familyHuertasSection =
-      document.getElementById('familia-huertas')?.offsetTop || 0;
-
-    const trustHuertasSection =
-      document.getElementById('confia-huertas')?.offsetTop || 0;
-    const contactSection =
-      document.getElementById('obten-tu-lote')?.offsetTop || 0;
-    if (scrollPosition >= featuredSection) {
-      setBgColor('transparent');
-    }
-    if (scrollPosition >= howToPaySection) {
-      setBgColor('bg-pri-200');
-    }
-
-    if (scrollPosition >= projectsSection) {
-      setBgColor('bg-sec');
-    }
-    if (scrollPosition >= familyHuertasSection) {
-      setBgColor('transparent');
-    }
-    if (scrollPosition >= trustHuertasSection) {
-      setBgColor('bg-pri-200');
-    }
-    if (scrollPosition >= contactSection) {
-      setBgColor('bg-sec');
-    }
+    sectionIds.forEach((sectionId, index) => {
+      const color =
+        index % 2 === 0 ? 'transparent' : index === 1 ? 'bg-pri-200' : 'bg-sec';
+      calculateBackgroundColor(sectionId, color);
+    });
   };
 
   useEffect(() => {
