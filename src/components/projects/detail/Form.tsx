@@ -88,8 +88,10 @@ const Form = ({ project }: Props) => {
                 type='text'
                 {...register('phone', {
                   required: true,
-                  maxLength: 15,
+                  maxLength: 9,
                 })}
+                minLength={9}
+                maxLength={9}
                 onKeyDown={(e) => onlyNumber(e)}
                 aria-errormessage={
                   errors.phone ? 'Este campo es requerido' : ''

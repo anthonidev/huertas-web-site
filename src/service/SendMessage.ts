@@ -8,27 +8,27 @@ export const SendMessageSevice = async (
   if (project === undefined) project = '';
 
   const sendData = {
-    firstname: data.firstname,
+    first_name: data.firstname,
+    last_name: data.lastname,
     email: data.email,
     phone: data.phone,
     message: data.message,
-    lastname: data.lastname,
-    project: project,
+    project_lead: project,
   };
-  toast.success('Mensaje enviado correctamente');
   let send = true;
 
-  //   await http
-  //     .post(`/api/lead/create/`, JSON.stringify(sendData))
-  //     .then((res) => {
-  //       toast.success('Mensaje enviado correctamente');
-  //       send = true;
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       toast.success('Mensaje enviado correctamente');
+  console.log(sendData);
+  await http
+    .post(`/api/web/leads/`, JSON.stringify(sendData))
+    .then((res) => {
+      toast.success('Mensaje enviado correctamente');
+      send = true;
+    })
+    .catch((err) => {
+      console.log(err);
+      toast.error('Error al enviar el mensaje');
 
-  //       send = false;
-  //     })
+      send = false;
+    });
   return send;
 };

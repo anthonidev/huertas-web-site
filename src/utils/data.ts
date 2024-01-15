@@ -3,6 +3,9 @@ import {
   FocusIdeaIcon,
   HandFamilyIcon,
   HandMoneyIcon,
+  StepBuyIcon,
+  StepGetIcon,
+  StepSepIcon,
 } from '@/components/icons/Icons';
 
 const howtopay = [
@@ -85,18 +88,18 @@ const stats = [
 
 const stepsgetland = [
   {
-    icon: BarMoneyIcon,
+    icon: StepSepIcon,
     title: 'Elígelo',
     description:
       'Selecciona el lote según nuestro plano del proyecto de tu interés.',
   },
   {
-    icon: BarMoneyIcon,
+    icon: StepGetIcon,
     title: 'Separalo',
     description: 'Puedes separar tu lote desde s/100',
   },
   {
-    icon: BarMoneyIcon,
+    icon: StepBuyIcon,
     title: 'Compralo',
     description:
       'Accede al mejor precio ya sea al contado o con iniciales bajas.',

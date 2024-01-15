@@ -31,7 +31,7 @@ interface Area {
 }
 
 interface Gallery {
-  id: string;
+  id: number;
   image: string;
 }
 
