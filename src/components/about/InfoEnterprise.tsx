@@ -1,10 +1,11 @@
 import React from 'react';
 import { MissionIcon, VisionIcon, YearExpIcon } from '../icons/Icons';
+import Image from 'next/image';
 
 export const InfoEnterprise = () => {
   return (
-    <div className=''>
-      <div className=' flex h-full  justify-center space-x-10 bg-gradient-to-r from-pri to-sec py-28'>
+    <div className='relative bg-[url(/imgs/fondobuild.png)] bg-cover bg-center bg-no-repeat '>
+      <div className=' flex h-full flex-col items-center justify-center bg-gradient-to-r from-pri to-sec py-28 opacity-85 md:flex-row md:items-stretch md:space-x-10'>
         <h2 className='flex items-center justify-center py-4 text-4xl font-bold text-white '>
           Misión
         </h2>
@@ -18,7 +19,7 @@ export const InfoEnterprise = () => {
           propiedades de alta rentabilidad y servicio excepcional.
         </p>
       </div>
-      <div className=' flex h-full  justify-center space-x-10 bg-pri-100 py-28'>
+      <div className=' flex h-full flex-col  items-center  justify-center bg-pri-100 py-28 md:flex-row md:items-stretch md:space-x-10  '>
         <h2 className='flex items-center justify-center py-4 text-4xl font-bold text-white '>
           Visión
         </h2>
@@ -33,7 +34,7 @@ export const InfoEnterprise = () => {
           nuestra comunidad.
         </p>
       </div>
-      <div className=' flex h-full  justify-center space-x-10 bg-gradient-to-r from-pri to-sec  py-28'>
+      <div className=' flex h-full flex-col items-center justify-center bg-gradient-to-r from-pri to-sec py-28 opacity-85 md:flex-row  md:items-stretch md:space-x-10'>
         <h2 className='flex items-center justify-center py-4 text-2xl font-bold  text-white '>
           Años de <br /> experiencia
         </h2>
@@ -50,6 +51,13 @@ export const InfoEnterprise = () => {
           han sido clave para generar familias satisfechas.
         </p>
       </div>
+      <Image
+        src='/imgs/build.png'
+        width={500}
+        height={500}
+        alt='huertas inmobiliaria'
+        className='absolute bottom-0 left-0 hidden md:block '
+      />
     </div>
   );
 };
