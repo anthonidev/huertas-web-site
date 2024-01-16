@@ -31,4 +31,21 @@ const getProject = cache(async (slug: string) => {
   const project = (await res.json()) as ProjectDetail;
   return project;
 });
-export { getProjects, getProject };
+
+const getComments = cache(async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/web/front/comments/`,
+    {
+      cache: 'no-store',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  const comments = (await res.json()) as Comment[];
+  return comments;
+});
+
+export { getProjects, getProject, getComments };

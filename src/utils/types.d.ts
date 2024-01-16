@@ -43,3 +43,11 @@ interface FormContact {
   message: string;
   project?: string;
 }
+
+interface Comment {
+  id: number;
+  name: string;
+  comment: string;
+  occupation: string;
+  photo: string;
+}

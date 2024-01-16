@@ -1,8 +1,19 @@
-import React from 'react';
+'use client';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import { ComillasEndIcon, ComillasStartIcon } from '../icons/Icons';
 
-type Props = {};
+type Props = {
+  comments: Comment[];
+};
 
-export const FamilyHuertas = (props: Props) => {
+export const FamilyHuertas = ({ comments }: Props) => {
+  const [render, setRender] = useState(false);
+  useEffect(() => {
+    setRender(true);
+  }, [comments]);
   return (
     <main className='bg-pattern ' id='familia-huertas'>
       <header
@@ -22,6 +33,62 @@ export const FamilyHuertas = (props: Props) => {
           </div>
         </div>
       </header>
+      <div className='pt-40'>
+        {render && (
+          <AliceCarousel
+            mouseTracking
+            autoPlay
+            autoPlayInterval={5000}
+            infinite
+            disableButtonsControls
+            responsive={{
+              0: { items: 1 },
+              1024: { items: 1 },
+            }}
+            items={comments.map((item) => (
+              <div className='mx-auto flex max-w-7xl' key={item.id}>
+                <div className='flex basis-1/2 flex-col items-center justify-center space-y-4'>
+                  <div className='relative h-48 w-48 overflow-hidden rounded-full'>
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${item.photo}`}
+                      alt={'gallery'}
+                      width={200}
+                      height={200}
+                      className='object-cover'
+                    />
+                  </div>
+
+                  <span className='text-3xl font-bold text-pri'>
+                    {item.name}
+                  </span>
+                  <span className='bg-pri p-2 text-xl font-light text-white'>
+                    {item.occupation}
+                  </span>
+                </div>
+                <div
+                  className='relative flex basis-1/2 justify-center
+                '
+                >
+                  <Image
+                    src='/imgs/burbuja.png'
+                    width={600}
+                    height={500}
+                    alt='comentarios huertas inmobiliaria'
+                  />
+
+                  <div className='absolute left-0 top-0 flex  space-y-4 px-16 py-7'>
+                    <p className='w-full p-4 text-justify text-xl font-light '>
+                      <ComillasStartIcon className=' h-16 w-16 text-pri' />
+                      {item.comment}
+                      <ComillasEndIcon className=' h-16 w-16 text-pri' />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          />
+        )}
+      </div>
     </main>
   );
 };
