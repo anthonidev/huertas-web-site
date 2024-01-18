@@ -1,8 +1,9 @@
 const navigationLinks = [
   {
-    title: 'Nosotros',
-    href: '/nosotros',
+    title: 'Inicio',
+    href: '/',
   },
+
   {
     title: 'Proyectos',
     href: '/proyectos',
@@ -11,13 +12,10 @@ const navigationLinks = [
     title: 'Contáctanos',
     href: '/contactanos',
   },
+
   {
-    title: 'Blog',
-    href: '/blog',
-  },
-  {
-    title: 'Trabaja con nosotros',
-    href: '/trabaja-con-nosotros',
+    title: 'Nosotros',
+    href: '/nosotros',
   },
 ];
 

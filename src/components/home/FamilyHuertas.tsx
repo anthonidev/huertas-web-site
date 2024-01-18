@@ -46,9 +46,12 @@ export const FamilyHuertas = ({ comments }: Props) => {
               1024: { items: 1 },
             }}
             items={comments.map((item) => (
-              <div className='mx-auto flex max-w-7xl' key={item.id}>
+              <div
+                className='mx-auto flex max-w-7xl flex-col space-y-5 px-5 md:flex-row md:space-y-0'
+                key={item.id}
+              >
                 <div className='flex basis-1/2 flex-col items-center justify-center space-y-4'>
-                  <div className='relative h-48 w-48 overflow-hidden rounded-full'>
+                  <div className='relative h-24 w-24 overflow-hidden rounded-full md:h-48 md:w-48'>
                     <Image
                       src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${item.photo}`}
                       alt={'gallery'}
@@ -76,11 +79,11 @@ export const FamilyHuertas = ({ comments }: Props) => {
                     alt='comentarios huertas inmobiliaria'
                   />
 
-                  <div className='absolute left-0 top-0 flex  space-y-4 px-16 py-7'>
-                    <p className='w-full p-4 text-justify text-xl font-light '>
-                      <ComillasStartIcon className=' h-16 w-16 text-pri' />
+                  <div className='absolute left-0 top-1 space-y-4   px-16 py-7 md:top-1/4'>
+                    <p className='w-full p-4 text-justify text-xs font-light sm:text-lg  md:text-lg '>
+                      {/* <ComillasStartIcon className=' hidden h-16 w-16 text-pri md:block' /> */}
                       {item.comment}
-                      <ComillasEndIcon className=' h-16 w-16 text-pri' />
+                      {/* <ComillasEndIcon className=' hidden h-16 w-16 text-pri md:block' /> */}
                     </p>
                   </div>
                 </div>
