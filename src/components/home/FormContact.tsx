@@ -1,22 +1,19 @@
 'use client';
 import FormData from '@/components/shared/form/FormData';
-import Input from '@/components/shared/form/Input';
+import Input2 from '@/components/shared/form/Input2';
 import TextArea from '@/components/shared/form/TextArea';
 import { SendMessageSevice } from '@/service/SendMessage';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
 import React, { useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
+import TextArea2 from '../shared/form/TextArea2';
 
-type Props = {
-  project?: string;
-};
-
-const Form = ({ project }: Props) => {
+const FormContact = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
     setLoading(true);
-    SendMessageSevice(data, project)
+    SendMessageSevice(data)
       .then((send) => {
         if (send) {
           event.target.reset();
@@ -29,20 +26,14 @@ const Form = ({ project }: Props) => {
   return (
     <FormData<FormContact> onSubmit={onSubmit}>
       {({ register, formState: { errors } }) => (
-        <div className='rounded-2xl bg-sky-200 px-10 py-20'>
-          <p className='mb-5 text-center text-2xl text-pri md:text-3xl lg:text-4xl xl:text-5xl'>
-            Quiero que me contacten
-            <span className='font-extrabold text-pri'>
-              {' '}
-              para mayor información
-            </span>
+        <div className='mx-10 my-5 rounded-2xl bg-pri px-10 lg:mx-0 lg:my-0 '>
+          <p className=' py-10 text-center text-2xl text-white md:text-3xl '>
+            Quiero que me contacten para mayor información
           </p>
-          <p className='mb-5 text-center text-sm text-pri md:text-lg '>
-            Déjanos tus datos y un asesor se contactará contigo lo antes posible
-          </p>
+
           <div className='grid grid-cols-2 gap-4'>
             <div className='col-span-2 md:col-span-1'>
-              <Input
+              <Input2
                 title='Nombres '
                 type='text'
                 {...register('firstname', {
@@ -56,7 +47,7 @@ const Form = ({ project }: Props) => {
               />
             </div>
             <div className='col-span-2 md:col-span-1'>
-              <Input
+              <Input2
                 title='Apellidos'
                 type='text'
                 {...register('lastname', {
@@ -70,7 +61,7 @@ const Form = ({ project }: Props) => {
               />
             </div>
             <div className='col-span-2 md:col-span-1'>
-              <Input
+              <Input2
                 title='Correo electrónico'
                 type='email'
                 {...register('email', {
@@ -83,7 +74,7 @@ const Form = ({ project }: Props) => {
               />
             </div>
             <div className='col-span-2 md:col-span-1'>
-              <Input
+              <Input2
                 title='Número de teléfono'
                 type='text'
                 {...register('phone', {
@@ -100,7 +91,7 @@ const Form = ({ project }: Props) => {
             </div>
 
             <div className='col-span-2'>
-              <TextArea
+              <TextArea2
                 title='Mensaje'
                 {...register('message', {
                   required: false,
@@ -108,15 +99,17 @@ const Form = ({ project }: Props) => {
                 })}
               />
             </div>
+            <div className='col-span-2 flex items-center justify-center'>
+              <button
+                type='submit'
+                className='  bg-sec px-7 py-4 uppercase  text-white'
+                disabled={loading}
+              >
+                Solicitar información
+              </button>
+            </div>
 
-            <button
-              type='submit'
-              className='col-span-2 rounded-xl bg-pri py-2 text-white'
-              disabled={loading}
-            >
-              Solicitar información
-            </button>
-            <span className='col-span-2 mb-5 text-center text-xs text-pri md:text-sm'>
+            <span className='col-span-2 mb-5 text-center text-xs text-white md:text-sm'>
               Al enviar este formulario, aceptas que los datos que nos
               proporcionas se utilicen para responder a tu consulta.
             </span>
@@ -127,4 +120,4 @@ const Form = ({ project }: Props) => {
   );
 };
 
-export default Form;
+export default FormContact;

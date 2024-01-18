@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'clsx';
 export const HowPay = () => {
   return (
-    <article id='como-pagar' className='bg-pattern  pt-20 '>
+    <article id='como-pagar' className=' bg-pattern pt-20 '>
       <section className=' mx-auto flex h-screen max-w-7xl flex-col items-center  justify-evenly bg-cover bg-center px-4 sm:px-6 lg:px-8'>
         <header className='pt-20  font-light uppercase text-pri '>
           <h2 className='text-base text-pri-200 md:text-xl lg:text-3xl xl:text-5xl'>

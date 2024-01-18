@@ -1,5 +1,5 @@
 'use client';
-import { navigationLinks } from '@/utils/navigation';
+import { navigationLinks, sectionsColors } from '@/utils/navigation';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -7,15 +7,6 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { LogoIcon } from '../icons/Icons';
 import clsx from 'clsx';
-
-const sectionIds = [
-  'featured',
-  'como-pagar',
-  'proyectos-disponibles',
-  'familia-huertas',
-  'confia-huertas',
-  'obten-tu-lote',
-];
 
 export const Navbar = () => {
   const [bgColor, setBgColor] = useState('transparent');
@@ -31,10 +22,8 @@ export const Navbar = () => {
       }
     };
 
-    sectionIds.forEach((sectionId, index) => {
-      const color =
-        index % 2 === 0 ? 'transparent' : index === 1 ? 'bg-pri-200' : 'bg-sec';
-      calculateBackgroundColor(sectionId, color);
+    sectionsColors.forEach((section) => {
+      calculateBackgroundColor(section.anchor, section.bg);
     });
   };
 
@@ -46,7 +35,10 @@ export const Navbar = () => {
     };
   }, []);
   return (
-    <Disclosure as='nav' className={`${bgColor}  fixed top-0 z-40 w-full `}>
+    <Disclosure
+      as='nav'
+      className={`${bgColor}  fixed top-0 z-40 w-full bg-opacity-95 `}
+    >
       {({ open }) => (
         <>
           <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>

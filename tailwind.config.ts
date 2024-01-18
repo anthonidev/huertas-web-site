@@ -17,9 +17,10 @@ const config: Config = {
       },
       colors: {
         pri: {
-          DEFAULT: '#004B80',
+          DEFAULT: '#004b80',
           100: '#145781',
           200: '#075F80',
+          300: '#075F80',
         },
         sec: {
           DEFAULT: '#418041',

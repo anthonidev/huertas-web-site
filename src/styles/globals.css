@@ -41,3 +41,24 @@
     @apply text-lg font-bold leading-6 text-gray-500;
   }
 }
+
+@layer components {
+  .input_form2 {
+    @apply block w-full appearance-none border-0 
+          bg-transparent px-0 py-2.5
+          text-white;
+  }
+  .input_form2:focus {
+    @apply border-blue-600 outline-none ring-0;
+  }
+}
+@layer components {
+  .label_form2 {
+    @apply absolute
+         top-3 -z-10 origin-[0] -translate-y-4
+         scale-75 transform 
+          text-white duration-300
+           peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
+            peer-focus:left-1 peer-focus:-translate-y-4 peer-focus:scale-75;
+  }
+}

@@ -1,31 +1,37 @@
 import Image from 'next/image';
-import React from 'react';
-import { BarMoneyIcon, BeachIcon, CampoIcon } from '../icons/Icons';
+import { BeachIcon, CampoIcon } from '../icons/Icons';
+import FormContact from './FormContact';
 
 export const Featured = () => {
   return (
-    <header id='featured' className='relative h-screen '>
-      <section className='absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2  transform text-center lg:top-1/3'>
-        <h1 className=' title-banner px-14 font-extrabold uppercase  tracking-tighter text-white'>
-          #TULOTEAHORA
-        </h1>
-        <p className='mx-auto mt-4 flex w-3/4 items-center justify-center rounded-full bg-white px-4 py-2  text-base font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl  md:py-4 md:text-4xl  2xl:py-6 2xl:text-5xl'>
-          <CampoIcon className='mr-2 hidden  text-pri lg:block ' width={85} />
+    <header
+      id='featured'
+      className=' h-screen '
+      style={{
+        backgroundImage: 'url("/imgs/montaje-banner-web.webp")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'overlay',
+        backgroundColor: 'rgba(0,0,0,0.3)',
+      }}
+    >
+      <div className='mx-auto flex h-full  max-w-7xl flex-col items-stretch justify-between px-4 sm:px-6 lg:flex-row lg:space-x-5 lg:px-8'>
+        <div className='mt-40 flex w-full  flex-col items-center justify-around lg:mt-0  lg:w-1/2'>
+          <h1 className=' text-4xl font-extrabold   uppercase tracking-tighter  text-white lg:text-6xl'>
+            #TULOTEAHORA
+          </h1>
+          <p className='mx-auto mt-4 flex w-3/4 items-center justify-center rounded-full bg-white/80 px-4 py-2  text-base font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl  md:py-4 2xl:py-6 '>
+            <CampoIcon className='mr-2   w-12 text-pri lg:block ' width={85} />
 
-          <span className='text-pri'>CAMPO O </span>
-          <span className='ml-2 text-sec'>PLAYA </span>
-          <BeachIcon className='mr-2 hidden  text-sec lg:block' width={85} />
-        </p>
-      </section>
-      <figure>
-        <Image
-          src='/imgs/montaje-banner-web.webp'
-          alt='Invierte con Huertas Inmobiliaria'
-          className='h-screen w-full object-cover object-center brightness-75 filter'
-          width={1920}
-          height={1080}
-        />
-      </figure>
+            <span className='text-pri'>CAMPO O </span>
+            <span className='ml-2 text-sec'>PLAYA </span>
+            <BeachIcon className='mr-2  w-12  text-sec lg:block' width={85} />
+          </p>
+        </div>
+        <div className='flex  items-center justify-center lg:w-1/2'>
+          <FormContact />
+        </div>
+      </div>
     </header>
   );
 };
