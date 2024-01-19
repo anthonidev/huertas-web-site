@@ -1,11 +1,17 @@
 export const Featured = () => {
   return (
-    <main className='min-h-screen bg-pattern' id='familia-huertas'>
+    <main className='min-h-screen bg-pattern' id='featured-project'>
       <header
-        style={{ backgroundImage: 'url(/imgs/bannerProject.webp)' }}
-        className='relative h-screen items-end bg-opacity-95 bg-cover bg-center bg-no-repeat'
+        style={{
+          backgroundImage: 'url(/imgs/bannerProject.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+          backgroundColor: 'rgba(0,0,0,0.3)',
+        }}
+        className='relative min-h-screen items-end  '
       >
-        <div className='absolute right-0 top-2/4 z-10 flex flex-col  items-center  justify-center rounded-l-2xl  bg-sec/90 p-20 text-center'>
+        <div className='absolute bottom-0 right-0 z-10 flex flex-col  items-center  justify-center  bg-sec/90 p-20 text-center  lg:bottom-auto lg:top-2/4 lg:rounded-l-2xl'>
           <h1 className='text-5xl font-extrabold uppercase tracking-tighter text-white md:text-6xl'>
             TU LOTE IDEAL <br />
             <span className=' font-light'>¡TE ESPERA!</span>

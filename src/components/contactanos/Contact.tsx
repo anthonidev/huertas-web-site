@@ -2,7 +2,10 @@ import { PhoneIcon } from '@heroicons/react/24/solid';
 
 export const Contact = () => {
   return (
-    <section className=' flex  items-center justify-center bg-pri  bg-pattern '>
+    <section
+      className=' flex  items-center justify-center bg-pri  bg-pattern '
+      id='contactanos-banner'
+    >
       <div className='mx-auto flex w-full max-w-7xl flex-col items-start justify-start px-4  sm:px-6 lg:px-8'>
         <header className=' mb-20 rounded-b-[50px] bg-sec px-5  pb-10 pt-12 text-3xl text-white  md:px-16 md:pb-20 md:pt-36 md:text-5xl'>
           Contáctanos:

@@ -2,11 +2,11 @@
 import { navigationLinks, sectionsColors } from '@/utils/navigation';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { LogoIcon } from '../icons/Icons';
-import clsx from 'clsx';
 
 export const Navbar = () => {
   const [bgColor, setBgColor] = useState('transparent');
@@ -37,7 +37,10 @@ export const Navbar = () => {
   return (
     <Disclosure
       as='nav'
-      className={`${bgColor}  fixed top-0 z-40 w-full bg-opacity-95 `}
+      className={clsx(
+        'fixed z-50 w-full bg-opacity-95 transition-all duration-500 ease-in-out',
+        bgColor
+      )}
     >
       {({ open }) => (
         <>

@@ -1,3 +1,4 @@
+'use client';
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { HandMoneyIcon } from '../icons/Icons';

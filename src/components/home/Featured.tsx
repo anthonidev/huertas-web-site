@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { BeachIcon, CampoIcon } from '../icons/Icons';
 import FormContact from './FormContact';
 
@@ -6,7 +5,7 @@ export const Featured = () => {
   return (
     <header
       id='featured'
-      className=' h-screen '
+      className='  flex min-h-screen flex-col justify-center'
       style={{
         backgroundImage: 'url("/imgs/montaje-banner-web.webp")',
         backgroundSize: 'cover',

@@ -2,7 +2,10 @@ import React from 'react';
 
 export const Hero = () => {
   return (
-    <section className='flex min-h-screen items-center justify-center bg-pattern  '>
+    <section
+      className='flex min-h-screen items-center justify-center bg-black  bg-opacity-30 bg-pattern'
+      id='contactanos'
+    >
       <header className='mx-auto w-full max-w-7xl px-4  sm:px-6 lg:px-8'>
         <h1 className='flex flex-col  text-4xl font-extrabold text-gray-900'>
           <span className='text-7xl font-normal text-pri-100'>¡Hola!</span>
