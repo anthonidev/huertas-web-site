@@ -1,12 +1,12 @@
 'use client';
 import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
-import TextArea from '@/components/shared/form/TextArea';
 import { SendMessageSevice } from '@/service/SendMessage';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
 import TextArea2 from '../shared/form/TextArea2';
+import { CursorArrowRaysIcon } from '@heroicons/react/24/solid';
 
 const FormContact = () => {
   const [loading, setLoading] = useState(false);
@@ -102,10 +102,14 @@ const FormContact = () => {
             <div className='col-span-2 flex items-center justify-center'>
               <button
                 type='submit'
-                className='  bg-sec px-7 py-4 uppercase  text-white'
+                className='  pushable group   flex uppercase text-white'
                 disabled={loading}
               >
-                Solicitar información
+                <span className='edge'></span>
+                <span className='front flex'>
+                  <CursorArrowRaysIcon className='mr-2 h-5 w-5 animate-bounce group-hover:animate-none' />
+                  Solicitar información
+                </span>
               </button>
             </div>
 
