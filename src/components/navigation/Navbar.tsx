@@ -9,27 +9,33 @@ import { useEffect, useState } from 'react';
 import { LogoIcon } from '../icons/Icons';
 
 export const Navbar = () => {
-  const [bgColor, setBgColor] = useState('transparent');
+  const [currentSection, setCurrentSection] = useState('');
   const path = usePathname();
 
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
+  useEffect(() => {
+    // Función para manejar el evento de desplazamiento
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
 
-    const calculateBackgroundColor = (sectionId: string, color: string) => {
-      const sectionTop = document.getElementById(sectionId)?.offsetTop || 0;
-      if (scrollPosition >= sectionTop) {
-        setBgColor(color);
-      }
+      // Iterar a través de las secciones y encontrar la actual en función de la posición de desplazamiento
+      sectionsColors.forEach((section, index) => {
+        const sectionElement = document.getElementById(section.anchor);
+
+        if (sectionElement) {
+          const sectionTop = sectionElement.offsetTop;
+          const sectionBottom = sectionTop + sectionElement.clientHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setCurrentSection(section.anchor);
+          }
+        }
+      });
     };
 
-    sectionsColors.forEach((section) => {
-      calculateBackgroundColor(section.anchor, section.bg);
-    });
-  };
-
-  useEffect(() => {
+    // Agregar el evento de desplazamiento al montar el componente
     window.addEventListener('scroll', handleScroll);
 
+    // Limpiar el evento al desmontar el componente
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -39,7 +45,7 @@ export const Navbar = () => {
       as='nav'
       className={clsx(
         'fixed z-50 w-full bg-opacity-95 transition-all duration-500 ease-in-out',
-        bgColor
+        sectionsColors.find((section) => section.anchor === currentSection)?.bg
       )}
     >
       {({ open }) => (
