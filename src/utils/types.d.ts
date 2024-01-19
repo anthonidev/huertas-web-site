@@ -51,3 +51,7 @@ interface Comment {
   occupation: string;
   photo: string;
 }
+declare module 'react-reveal/Fade';
+declare module 'react-reveal/Flip';
+declare module 'react-reveal/Zoom';
+declare module 'react-reveal/Bounce';

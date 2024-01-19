@@ -1,29 +1,36 @@
+'use client';
 import { howtopay } from '@/utils/data';
 import React from 'react';
 import clsx from 'clsx';
+import Bounce from 'react-reveal/Bounce';
+
 export const HowPay = () => {
   return (
     <article id='como-pagar' className=' bg-pattern pt-20 '>
       <section className=' mx-auto flex h-screen max-w-7xl flex-col items-center  justify-evenly bg-cover bg-center px-4 sm:px-6 lg:px-8'>
         <header className='pt-20  font-light uppercase text-pri '>
-          <h2 className='text-base text-pri-200 md:text-xl lg:text-3xl xl:text-5xl'>
-            <span className=' text-2xl font-extrabold md:text-4xl lg:text-5xl xl:text-7xl'>
-              ¡Que hoy
-            </span>
-            sea tu mejor
-          </h2>
-          <figure className='flex text-5xl   2xl:text-6xl'>
-            <CustomTextImage
-              className=' text-[50px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
-              image='/imgs/inver.webp'
-              text='INVER'
-            />
-            <CustomTextImage
-              className=' text-[50px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
-              image='/imgs/sion!.webp'
-              text='SIÓN!'
-            />
-          </figure>
+          <Bounce left>
+            <h2 className='text-base text-pri-200 md:text-xl lg:text-3xl xl:text-5xl'>
+              <span className=' text-2xl font-extrabold md:text-4xl lg:text-5xl xl:text-7xl'>
+                ¡Que hoy
+              </span>
+              sea tu mejor
+            </h2>
+          </Bounce>
+          <Bounce right>
+            <figure className='flex text-5xl   2xl:text-6xl'>
+              <CustomTextImage
+                className=' text-[50px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
+                image='/imgs/inver.webp'
+                text='INVER'
+              />
+              <CustomTextImage
+                className=' text-[50px] font-[1000] md:text-[100px] lg:text-[125px] xl:text-[150px] 2xl:text-[175px] '
+                image='/imgs/sion!.webp'
+                text='SIÓN!'
+              />
+            </figure>
+          </Bounce>
         </header>
         <main>
           <p className='py-10 text-center  text-2xl font-bold uppercase tracking-tight text-pri-200 md:text-4xl lg:text-5xl xl:text-6xl'>

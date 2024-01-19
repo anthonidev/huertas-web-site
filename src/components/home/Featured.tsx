@@ -1,13 +1,10 @@
 'use client';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { BeachIcon, CampoIcon } from '../icons/Icons';
 import FormContact from './FormContact';
-import { motion, useInView } from 'framer-motion';
-
+import Fade from 'react-reveal/Fade';
+import Flip from 'react-reveal/Flip';
 export const Featured = () => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const showInView = useInView(ref, { once: true, margin: '-100px' });
   const text = '#TULOTEAHORA'.split('');
   return (
     <header
@@ -38,23 +35,24 @@ export const Featured = () => {
               </motion.span>
             ))}
           </h1>
-          <p className='mx-auto mt-4 flex w-3/4 items-center justify-center rounded-full bg-white/80 px-4 py-2  text-base font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl  md:py-4 2xl:py-6 '>
-            <CampoIcon className='mr-2   w-12 text-pri lg:block ' width={85} />
+          <Flip right>
+            <p className='mx-auto mt-4 flex w-3/4 items-center justify-center rounded-full bg-white/80 px-4 py-2  text-base font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl  md:py-4 2xl:py-6 '>
+              <CampoIcon
+                className='mr-2   w-12 text-pri lg:block '
+                width={85}
+              />
 
-            <span className='text-pri'>CAMPO O </span>
-            <span className='ml-2 text-sec'>PLAYA </span>
-            <BeachIcon className='mr-2  w-12  text-sec lg:block' width={85} />
-          </p>
+              <span className='text-pri'>CAMPO O </span>
+              <span className='ml-2 text-sec'>PLAYA </span>
+              <BeachIcon className='mr-2  w-12  text-sec lg:block' width={85} />
+            </p>
+          </Flip>
         </div>
-        <motion.div
-          initial={{ x: 300 }}
-          animate={showInView ? { x: 0 } : { x: 0 }}
-          ref={ref}
-          transition={{ duration: 1 }}
-          className='flex  items-center justify-center lg:w-1/2'
-        >
-          <FormContact />
-        </motion.div>
+        <Fade right>
+          <div className='flex  items-center justify-center lg:w-1/2'>
+            <FormContact />
+          </div>
+        </Fade>
       </div>
     </header>
   );
