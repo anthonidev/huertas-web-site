@@ -73,11 +73,11 @@ const ProjectCard = ({
               </div>
             </div>
             <div className='mr-5 flex basis-1/2 flex-col items-center justify-center text-white'>
-              <div className='inline-flex items-center justify-center text-center text-3xl  font-extrabold text-white'>
+              <div className='inline-flex items-center justify-center text-center text-xl font-extrabold  text-white lg:text-3xl'>
                 <MapPinIcon className='h-5 w-5 ' />
                 {location}
               </div>
-              <span className='text-base'>{km}</span>
+              <span className='text-sm lg:text-base'>{km}</span>
             </div>
           </figcaption>
         </figure>
