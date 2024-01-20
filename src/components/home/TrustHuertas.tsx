@@ -1,6 +1,6 @@
+'use client';
 import { stats } from '@/utils/data';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 import StatCard from '../shared/StatCard';
 
 type Props = {};
@@ -24,23 +24,28 @@ export const TrustHuertas = (props: Props) => {
             <br /> ¡Ahora tener
             <span className=' font-extrabold'> TÚ LOTE ES ALTOKE!</span>
           </p>
-          <button className=' inline-flex items-center rounded-full bg-pri px-4 py-3  text-white'>
+          <button className='button  bg-pri  px-5 py-3 text-white '>
             Conoce más{' '}
-            <ArrowRightIcon
-              className='ml-3 h-5 w-5  text-white'
-              aria-hidden='true'
-            />
+            <svg fill='currentColor' viewBox='0 0 24 24' className='icon'>
+              <path
+                clipRule='evenodd'
+                d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z'
+                fillRule='evenodd'
+              ></path>
+            </svg>
           </button>
         </header>
-        <div className='grid grid-cols-1 justify-stretch gap-10 text-pri-200 lg:grid-cols-2'>
-          {stats.map((stat, index) => (
-            <StatCard
-              key={index}
-              stat={stat}
-              par={index % 2 === 0 ? true : false}
-            />
-          ))}
-        </div>
+        <Fade cascade direction='right' triggerOnce={true}>
+          <ul className='grid grid-cols-1 justify-stretch gap-10 text-pri-200 lg:grid-cols-2'>
+            {stats.map((stat, index) => (
+              <StatCard
+                key={index}
+                stat={stat}
+                par={index % 2 === 0 ? true : false}
+              />
+            ))}
+          </ul>
+        </Fade>
       </section>
     </main>
   );

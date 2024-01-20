@@ -1,5 +1,7 @@
+'use client';
 import { stepsgetland } from '@/utils/data';
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 type Props = {};
 
@@ -19,24 +21,32 @@ export const GetLandSteps = (props: Props) => {
               <br />
               LOTE EN <br />3 PASOS
             </h3>
-            <div className='mx-auto flex flex-col justify-center  space-y-10'>
-              {stepsgetland.map(({ description, icon: Icon, title }, index) => (
-                <div key={index} className=' flex items-center justify-start  '>
-                  <Icon className='h-24 w-24 text-white' />
-                  <div>
-                    <p className='text-2xl font-extrabold text-white'>
-                      {title}
-                    </p>
-                    <p className='w-40 text-sm font-light text-white  md:w-44 lg:w-52 xl:w-64'>
-                      {description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Fade cascade direction='left' triggerOnce={true}>
+              <ul className='mx-auto flex flex-col justify-center  space-y-10'>
+                {stepsgetland.map(
+                  ({ description, icon: Icon, title }, index) => (
+                    <li
+                      key={index}
+                      className=' flex items-center justify-start  '
+                    >
+                      <Icon className='h-24 w-24 text-white' />
+                      <div>
+                        <p className='text-2xl font-extrabold text-white'>
+                          {title}
+                        </p>
+                        <p className='w-40 text-sm font-light text-white  md:w-44 lg:w-52 xl:w-64'>
+                          {description}
+                        </p>
+                      </div>
+                    </li>
+                  )
+                )}
+              </ul>
+            </Fade>
           </div>
-          <button className=' mx-10 my-10   max-w-7xl bg-sec   px-6 py-4 text-xl font-extrabold text-white'>
-            MÁS INFORMACIÓN
+          <button className=' pushable mx-10 my-10   max-w-7xl rounded  bg-sec  text-xl font-extrabold text-white'>
+            <span className='edge'></span>
+            <span className='front '>MÁS INFORMACIÓN</span>
           </button>
         </div>
       </header>

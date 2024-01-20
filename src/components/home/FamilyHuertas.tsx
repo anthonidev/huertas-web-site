@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import { ComillasEndIcon, ComillasStartIcon } from '../icons/Icons';
 
 type Props = {
   comments: Comment[];

@@ -2,8 +2,8 @@
 import { motion } from 'framer-motion';
 import { BeachIcon, CampoIcon } from '../icons/Icons';
 import FormContact from './FormContact';
-import Fade from 'react-reveal/Fade';
-import Flip from 'react-reveal/Flip';
+import { Fade, Flip, Zoom } from 'react-awesome-reveal';
+
 export const Featured = () => {
   const text = '#TULOTEAHORA'.split('');
   return (
@@ -35,7 +35,7 @@ export const Featured = () => {
               </motion.span>
             ))}
           </h1>
-          <Flip right>
+          <Zoom className='w-full'>
             <p className='mx-auto mt-4 flex w-3/4 items-center justify-center rounded-full bg-white/80 px-4 py-2  text-base font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl  md:py-4 2xl:py-6 '>
               <CampoIcon
                 className='mr-2   w-12 text-pri lg:block '
@@ -46,12 +46,13 @@ export const Featured = () => {
               <span className='ml-2 text-sec'>PLAYA </span>
               <BeachIcon className='mr-2  w-12  text-sec lg:block' width={85} />
             </p>
-          </Flip>
+          </Zoom>
         </div>
-        <Fade right>
-          <div className='flex  items-center justify-center lg:w-1/2'>
-            <FormContact />
-          </div>
+        <Fade
+          direction='right'
+          className='flex  items-center justify-center lg:w-1/2'
+        >
+          <FormContact />
         </Fade>
       </div>
     </header>
