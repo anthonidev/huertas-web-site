@@ -77,7 +77,7 @@ export const BannerPrimary = ({
         <Fade
           direction='left'
           triggerOnce={true}
-          className='mr-5 flex basis-1/2 flex-col items-center justify-center text-white'
+          className=' flex basis-1/2 flex-col '
         >
           <div className='mr-5 flex basis-1/2 flex-col items-center justify-center text-white'>
             <span className='text-sm font-bold uppercase md:text-xl '>
