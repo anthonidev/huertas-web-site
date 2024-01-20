@@ -36,7 +36,7 @@ export const Featured = () => {
             ))}
           </h1>
           <Zoom className='w-full'>
-            <p className='mx-auto mt-4 flex w-3/4 items-center justify-center rounded-full bg-white/80 px-4 py-2  text-base font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl  md:py-4 2xl:py-6 '>
+            <p className='mx-auto mt-4 flex items-center justify-center rounded-full bg-white/80 px-4 py-2 text-base  font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl md:py-4  lg:w-3/4 2xl:py-6 '>
               <CampoIcon
                 className='mr-2   w-12 text-pri lg:block '
                 width={85}
@@ -50,7 +50,7 @@ export const Featured = () => {
         </div>
         <Fade
           direction='right'
-          className='flex  items-center justify-center lg:w-1/2'
+          className='flex   items-center justify-center lg:w-1/2'
         >
           <FormContact />
         </Fade>

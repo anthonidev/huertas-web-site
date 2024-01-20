@@ -26,8 +26,8 @@ const FormContact = () => {
   return (
     <FormData<FormContact> onSubmit={onSubmit}>
       {({ register, formState: { errors } }) => (
-        <div className='mx-10 my-5 rounded-2xl bg-pri px-10 lg:mx-0 lg:my-0 '>
-          <p className=' py-10 text-center text-2xl text-white md:text-3xl '>
+        <div className='my-5 rounded-2xl bg-pri px-10 lg:mx-10 lg:my-0 '>
+          <p className=' py-10 text-center text-lg text-white md:text-3xl '>
             Quiero que me contacten para mayor información
           </p>
 
