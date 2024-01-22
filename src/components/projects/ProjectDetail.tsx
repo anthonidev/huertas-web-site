@@ -36,7 +36,10 @@ const ProjectDetail = ({ project }: Props) => {
       <TwoColums
         left={
           <div>
-            <Stats areas={project.areas} />
+            <Stats
+              areas={project.areas}
+              primary_color={project.primary_color}
+            />
             <Image
               src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${project.secondary_banner}`}
               width={800}

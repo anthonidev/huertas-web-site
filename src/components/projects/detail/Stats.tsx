@@ -1,30 +1,38 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 type Props = {
   areas: Area[];
+  primary_color: string;
 };
 
-const Stats = ({ areas }: Props) => {
+const Stats = ({ areas, primary_color }: Props) => {
   return (
     <div className='py-10'>
-      <p className='mb-5  text-center text-2xl text-gray-700 md:text-3xl lg:text-4xl'>
+      <p
+        className='mb-10  text-center text-2xl  md:text-3xl lg:text-4xl'
+        style={{ color: primary_color }}
+      >
         <span className='font-extrabold'>ATRIBUTOS </span>
         DEL CONDOMINIO
       </p>
-      <div className='grid grid-cols-3 gap-4'>
-        {areas.map(({ icon, id, alt }) => (
-          <div key={id} className='flex flex-col items-center'>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${icon}`}
-              width={200}
-              height={200}
-              alt={alt}
-            />
-            <span className='text-center text-xl  text-pri'>{alt}</span>
-          </div>
-        ))}
-      </div>
+      <Fade direction='up' triggerOnce cascade>
+        <ul className='grid grid-cols-3 gap-4'>
+          {areas.map(({ icon, id, alt }) => (
+            <li key={id} className='flex flex-col items-center space-y-5'>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${icon}`}
+                width={85}
+                height={85}
+                alt={alt}
+              />
+              <span className='text-center text-xl  text-pri'>{alt}</span>
+            </li>
+          ))}
+        </ul>
+      </Fade>
     </div>
   );
 };
