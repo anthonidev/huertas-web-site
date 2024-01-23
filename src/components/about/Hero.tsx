@@ -1,11 +1,19 @@
-import Image from 'next/image';
+'use client';
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 export const Hero = () => {
   return (
-    <section className='flex min-h-screen items-center justify-center bg-[url(/imgs/heronosotros.jpg)] bg-cover bg-center bg-no-repeat  '>
+    <section
+      id='nosotros-header'
+      className='flex min-h-screen items-center justify-center bg-[url(/imgs/heronosotros.jpg)] bg-cover bg-center bg-no-repeat  '
+    >
       <header className='mx-auto  w-full max-w-7xl   px-4  sm:px-6 lg:px-8 '>
-        <div className='flex flex-col  space-y-10 '>
+        <Fade
+          direction='down'
+          triggerOnce
+          className='flex flex-col  space-y-10 '
+        >
           <div className='  font-extrabold '>
             <p className=' text-6xl  text-pri-100'>¿Quiénes</p> <br />
             <span className='mx-3  bg-sec px-2 text-6xl uppercase text-white'>
@@ -13,12 +21,12 @@ export const Hero = () => {
             </span>
           </div>
           <p className='  mt-3 max-w-sm text-justify text-base text-pri'>
-            Somos una empresa peruana, con experiencia en el sector
-            inmobiliario,<strong> Huertas Inmobiliaria </strong> empresa 100%
-            peruana encargada de brindarte la mejor oportunidad de invertir en
-            tu futuro.
+            Somos una empresa <strong> 100% peruana </strong> , desarrollando
+            proyectos inmobiliarios de casa de campo y playa para todas las
+            familias peruanas. Contamos con exclusivos condominios en el norte y
+            sur del país.
           </p>
-        </div>
+        </Fade>
       </header>
     </section>
   );

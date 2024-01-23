@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import { BeachIcon, CampoIcon } from '../icons/Icons';
 import FormContact from './FormContact';
 import { Fade, Flip, Zoom } from 'react-awesome-reveal';
+import Link from 'next/link';
 
 export const Featured = () => {
-  const text = '#TULOTEAHORA'.split('');
+  const text = '#TULOTEALTOKE'.split('');
   return (
     <header
       id='featured'
@@ -19,7 +20,7 @@ export const Featured = () => {
       }}
     >
       <div className='mx-auto flex h-full  max-w-7xl flex-col items-stretch justify-between px-4 sm:px-6 lg:flex-row lg:space-x-5 lg:px-8'>
-        <div className='mt-40 flex w-full  flex-col items-center justify-around lg:mt-0  lg:w-1/2'>
+        <div className='mt-40 flex w-full  flex-col items-center justify-around lg:mt-0  '>
           <h1 className=' text-4xl font-extrabold   uppercase tracking-tighter  text-white lg:text-6xl'>
             {text.map((el, i) => (
               <motion.span
@@ -36,7 +37,10 @@ export const Featured = () => {
             ))}
           </h1>
           <Zoom className='w-full'>
-            <p className='mx-auto mt-4 flex items-center justify-center rounded-full bg-white/80 px-4 py-2 text-base  font-bold tracking-tighter shadow-2xl shadow-black sm:py-3 sm:text-2xl md:py-4  lg:w-3/4 2xl:py-6 '>
+            <Link
+              href='/proyectos'
+              className='mx-auto mt-4 flex items-center justify-center rounded-full bg-white/80 px-4 py-2 text-base  font-bold tracking-tighter shadow-2xl shadow-black hover:bg-white hover:bg-opacity-70 sm:py-3  sm:text-2xl md:py-4 lg:w-3/4 2xl:py-6'
+            >
               <CampoIcon
                 className='mr-2   w-12 text-pri lg:block '
                 width={85}
@@ -45,12 +49,12 @@ export const Featured = () => {
               <span className='text-pri'>CAMPO O </span>
               <span className='ml-2 text-sec'>PLAYA </span>
               <BeachIcon className='mr-2  w-12  text-sec lg:block' width={85} />
-            </p>
+            </Link>
           </Zoom>
         </div>
         <Fade
           direction='right'
-          className='flex   items-center justify-center lg:w-1/2'
+          className='flex   items-center justify-center lg:mt-20 lg:max-w-lg'
         >
           <FormContact />
         </Fade>

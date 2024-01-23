@@ -2,6 +2,7 @@
 import { stats } from '@/utils/data';
 import { Fade } from 'react-awesome-reveal';
 import StatCard from '../shared/StatCard';
+import Link from 'next/link';
 
 type Props = {};
 
@@ -24,7 +25,10 @@ export const TrustHuertas = (props: Props) => {
             <br /> ¡Ahora tener
             <span className=' font-extrabold'> TÚ LOTE ES ALTOKE!</span>
           </p>
-          <button className='button  bg-pri  px-5 py-3 text-white '>
+          <Link
+            href='/nosotros'
+            className='button  bg-pri  px-5 py-3 text-white '
+          >
             Conoce más{' '}
             <svg fill='currentColor' viewBox='0 0 24 24' className='icon'>
               <path
@@ -33,7 +37,7 @@ export const TrustHuertas = (props: Props) => {
                 fillRule='evenodd'
               ></path>
             </svg>
-          </button>
+          </Link>
         </header>
         <Fade cascade direction='right' triggerOnce={true}>
           <ul className='grid grid-cols-1 justify-stretch gap-10 text-pri-200 lg:grid-cols-2'>

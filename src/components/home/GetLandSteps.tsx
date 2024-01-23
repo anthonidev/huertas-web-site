@@ -1,11 +1,17 @@
 'use client';
 import { stepsgetland } from '@/utils/data';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 
 type Props = {};
 
 export const GetLandSteps = (props: Props) => {
+  const { push } = useRouter();
+  const handleRedirect = () => {
+    push('/proyectos');
+  };
+
   return (
     <main className='min-h-screen bg-pattern' id='obten-tu-lote'>
       <header
@@ -44,7 +50,11 @@ export const GetLandSteps = (props: Props) => {
               </ul>
             </Fade>
           </div>
-          <button className=' pushable mx-10 my-10   max-w-7xl rounded  bg-sec  text-xl font-extrabold text-white'>
+          <button
+            onClick={handleRedirect}
+            type='button'
+            className=' pushable mx-10 my-10   max-w-7xl rounded  bg-sec  text-xl font-extrabold text-white'
+          >
             <span className='edge'></span>
             <span className='front '>MÁS INFORMACIÓN</span>
           </button>

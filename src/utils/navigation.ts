@@ -64,6 +64,16 @@ const sectionsColors = [
     bg: 'bg-pri-300',
     anchor: 'contactanos-form',
   },
+
+  {
+    bg: 'bg-pri-300',
+    anchor: 'nosotros-header',
+  },
+
+  {
+    bg: 'bg-gradient-to-r from-pri to-sec ',
+    anchor: 'nosotros-info',
+  },
 ];
 
 export { navigationLinks, sectionsColors };

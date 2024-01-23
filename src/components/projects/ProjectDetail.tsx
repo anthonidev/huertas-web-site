@@ -1,12 +1,10 @@
-import React from 'react';
-import { BannerPrimary } from './detail/BannerPrimary';
-import TwoColums from '../shared/TwoColums';
-import Form from './detail/Form';
-import Stats from './detail/Stats';
 import Image from 'next/image';
-import MapProject from './detail/MapProject';
-import { ObrasIcon } from '../icons/Icons';
+import TwoColums from '../shared/TwoColums';
+import { BannerPrimary } from './detail/BannerPrimary';
+import Form from './detail/Form';
 import Galllery from './detail/Galllery';
+import MapProject from './detail/MapProject';
+import Stats from './detail/Stats';
 
 type Props = {
   project: ProjectDetail;

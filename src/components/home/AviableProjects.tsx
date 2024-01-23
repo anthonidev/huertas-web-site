@@ -23,7 +23,7 @@ export const AviableProjects = ({ projects }: Props) => {
           </Fade>
         </header>
         <Fade cascade direction='left' triggerOnce={true}>
-          <ul className='grid grid-cols-1 gap-10 text-justify  lg:grid-cols-2'>
+          <ul className='grid grid-cols-1 gap-10 text-justify  lg:grid-cols-2 xl:grid-cols-3'>
             {projects &&
               projects.map((project, index) => (
                 <li key={project.id}>

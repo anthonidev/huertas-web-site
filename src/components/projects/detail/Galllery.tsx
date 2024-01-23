@@ -94,7 +94,7 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
             disableDotsControls
             responsive={{
               0: { items: 1 },
-              1024: { items: 3 },
+              1024: { items: 2 },
             }}
             items={gallery.map((item) => (
               <div className='relative flex justify-end' key={item.id}>
@@ -107,8 +107,8 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
                 <Image
                   src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${item.image}`}
                   alt={'gallery'}
-                  width={300}
-                  height={300}
+                  width={500}
+                  height={500}
                 />
               </div>
             ))}
