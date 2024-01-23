@@ -1,6 +1,6 @@
 import { getProject } from '@/components/actions/getProjects';
 import ProjectDetail from '@/components/projects/ProjectDetail';
-import SkeletonCard from '@/components/shared/skeleton/Skeleton';
+import LoadingPage from '@/components/shared/LoadingPage';
 import { Suspense } from 'react';
 export const dynamic = 'force-dynamic';
 
@@ -9,9 +9,11 @@ interface Props {
 }
 export default function Project({ params }: Props) {
   return (
-    <Suspense fallback={<SkeletonCard />}>
-      <ProjectAsync params={params} />
-    </Suspense>
+    <>
+      <Suspense fallback={<LoadingPage />}>
+        <ProjectAsync params={params} />
+      </Suspense>
+    </>
   );
 }
 

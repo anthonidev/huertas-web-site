@@ -3,7 +3,7 @@ import FormatCoin from '@/utils/coin';
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import Image from 'next/image';
-import { Fade } from 'react-awesome-reveal';
+import { Fade, Flip, JackInTheBox, Zoom } from 'react-awesome-reveal';
 type Props = {
   logo: string;
   primary_banner: string;
@@ -55,12 +55,26 @@ export const BannerPrimary = ({
         backgroundColor: 'rgba(0,0,0,0.3)',
       }}
     >
-      <div className='mt-10 flex border-separate flex-col items-center justify-center space-y-5'>
+      <JackInTheBox
+        triggerOnce
+        className='absolute left-0   hidden rounded-r-full bg-white px-10 py-8 md:block'
+      >
         <Image
           src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${logo}`}
           alt={slogan}
           width={200}
           height={200}
+          className=''
+        />
+      </JackInTheBox>
+
+      <div className=' mt-10 flex border-separate flex-col items-center justify-center space-y-5'>
+        <Image
+          src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${logo}`}
+          alt={slogan}
+          width={200}
+          height={200}
+          className='block md:hidden'
         />
         <Fade direction='up'>
           <h1
