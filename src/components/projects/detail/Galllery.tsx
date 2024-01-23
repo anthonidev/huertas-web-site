@@ -54,10 +54,10 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
 
   return (
     <div className='mx-auto max-w-7xl  py-10 '>
-      <div className=' flex flex-col  items-end p-4 text-4xl font-extrabold '>
+      <div className=' flex flex-col  items-end p-4 text-2xl font-extrabold xl:text-3xl '>
         <p className='flex items-center space-x-2'>
           <WorkingIcon
-            className='h-20 w-20'
+            className='h-16 w-16'
             style={{ color: secondary_color }}
           />
           <span style={{ color: secondary_color }}>AVANCE </span>
@@ -75,14 +75,14 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
           style={{
             color: primary_color,
           }}
-          className='text-base font-light'
+          className='text-xs font-light  xl:text-sm'
         >
           Galeria de fotos
         </span>
       </div>
       <div className='mx-5 flex flex-col justify-end space-y-20 lg:flex-row '>
         <ObrasIcon
-          className='absolute left-0 z-20 hidden h-96 w-96 lg:block'
+          className='absolute left-0 z-20 hidden h-[27rem] xl:block'
           style={{ color: secondary_color }}
         />
         {render && (
@@ -92,12 +92,13 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
             autoPlayInterval={3000}
             infinite
             disableDotsControls
+            disableButtonsControls
             responsive={{
               0: { items: 1 },
-              1024: { items: 2 },
+              600: { items: 2 },
             }}
             items={gallery.map((item) => (
-              <div className='relative flex justify-end' key={item.id}>
+              <div className='relative  mt-5 flex justify-end' key={item.id}>
                 <button
                   onClick={() => handleOpen(item.id)}
                   className='absolute  right-4 top-4 '

@@ -10,12 +10,12 @@ type Props = {
 
 const Stats = ({ areas, primary_color }: Props) => {
   return (
-    <div className='py-10'>
+    <div className='py-20'>
       <p
-        className='mb-10  text-center text-2xl  md:text-3xl lg:text-4xl'
+        className='mb-20  text-center text-2xl  md:text-3xl '
         style={{ color: primary_color }}
       >
-        <span className='font-extrabold'>ATRIBUTOS </span>
+        <span className=' font-extrabold'>ATRIBUTOS </span>
         DEL CONDOMINIO
       </p>
       <Fade direction='up' triggerOnce cascade>
@@ -24,11 +24,13 @@ const Stats = ({ areas, primary_color }: Props) => {
             <li key={id} className='flex flex-col items-center space-y-5'>
               <Image
                 src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${icon}`}
-                width={85}
-                height={85}
+                width={80}
+                height={80}
                 alt={alt}
               />
-              <span className='text-center text-xl  text-pri'>{alt}</span>
+              <span className='text-center text-base font-light text-pri lg:text-xl'>
+                {alt}
+              </span>
             </li>
           ))}
         </ul>

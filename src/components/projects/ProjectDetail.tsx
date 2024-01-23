@@ -54,7 +54,12 @@ const ProjectDetail = ({ project }: Props) => {
         }
         right={
           <div>
-            <Form project={project.id} />
+            <Form
+              project={project.id}
+              tertiary_color={project.tertiary_color}
+              primary_color={project.primary_color}
+              secondary_color={project.secondary_color}
+            />
           </div>
         }
       />
