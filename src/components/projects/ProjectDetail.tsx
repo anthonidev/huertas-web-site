@@ -5,6 +5,7 @@ import Form from './detail/Form';
 import Galllery from './detail/Galllery';
 import MapProject from './detail/MapProject';
 import Stats from './detail/Stats';
+import PriceFrom from './detail/PriceFrom';
 
 type Props = {
   project: ProjectDetail;
@@ -43,6 +44,13 @@ const ProjectDetail = ({ project }: Props) => {
               width={800}
               height={800}
               alt={project.title}
+            />
+            <PriceFrom
+              secondary_color={project.secondary_color}
+              separate={project.separate}
+              currency={project.currency}
+              initial={project.initial}
+              price={project.price}
             />
             <MapProject
               km={project.km}

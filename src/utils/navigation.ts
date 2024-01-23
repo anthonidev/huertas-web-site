@@ -74,6 +74,14 @@ const sectionsColors = [
     bg: 'bg-gradient-to-r from-pri to-sec ',
     anchor: 'nosotros-info',
   },
+  {
+    bg: 'bg-pri',
+    anchor: 'proyecto-galeria',
+  },
+  {
+    bg: 'bg-sec',
+    anchor: 'proyecto-form',
+  },
 ];
 
 export { navigationLinks, sectionsColors };

@@ -10,7 +10,7 @@ type Props = {
 
 const MapProject = ({ km, location, photo_map, title }: Props) => {
   return (
-    <div className='flex flex-col items-center justify-center py-20 lg:flex-row'>
+    <div className='flex flex-col items-center justify-center py-20 text-center lg:flex-row'>
       <div className='basis-1/2'>
         <p className='text-2xl  text-pri'>
           <span className='font-bold'>¿Cómo llegar </span>a Condominio {title}?

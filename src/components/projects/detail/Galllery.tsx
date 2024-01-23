@@ -53,7 +53,7 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
   };
 
   return (
-    <div className='mx-auto max-w-7xl  py-10 '>
+    <div className='mx-auto max-w-7xl  py-10 ' id='proyecto-galeria'>
       <div className=' flex flex-col  items-end p-4 text-2xl font-extrabold xl:text-3xl '>
         <p className='flex items-center space-x-2'>
           <WorkingIcon
