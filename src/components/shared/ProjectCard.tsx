@@ -26,7 +26,7 @@ const ProjectCard = ({
   par,
 }: Props) => {
   return (
-    <article className='group mx-auto  my-10 max-w-7xl transform transition duration-500 ease-in-out hover:-translate-y-5 '>
+    <article className='group mx-auto  my-10 max-w-7xl transform transition duration-500 ease-in-out hover:-translate-y-3 '>
       <Link href={`/proyectos/${slug}`}>
         <header className='mx-5 flex justify-end  '>
           <h3
@@ -51,11 +51,11 @@ const ProjectCard = ({
             />
           </div>
           <Image
-            className='rounded-xl transition duration-500 ease-in-out group-hover:brightness-75  group-hover:filter'
+            className='h-[350px] rounded-xl bg-black object-cover transition duration-500 ease-in-out group-hover:brightness-75  group-hover:filter'
             src={`${process.env.NEXT_PUBLIC_MEDIA_URL}${banner_card}`}
             alt={title}
-            width={800}
-            height={800}
+            width={1000}
+            height={1000}
           />
           <figcaption className='absolute bottom-0 flex w-full justify-between '>
             <div className='basis-1/2'>

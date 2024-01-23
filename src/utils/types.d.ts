@@ -10,6 +10,7 @@ interface Project {
   price: number;
   min_area: string;
   slug: string;
+  year_launch_image: string;
 }
 
 interface ProjectDetail extends Project {

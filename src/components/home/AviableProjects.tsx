@@ -1,5 +1,5 @@
 'use client';
-import { Fade } from 'react-awesome-reveal';
+import { Fade, JackInTheBox } from 'react-awesome-reveal';
 import ProjectCard from '../shared/ProjectCard';
 
 type Props = {
@@ -22,7 +22,7 @@ export const AviableProjects = ({ projects }: Props) => {
             </h2>
           </Fade>
         </header>
-        <Fade cascade direction='left' triggerOnce={true}>
+        <JackInTheBox cascade triggerOnce={true}>
           <ul className='grid grid-cols-1 gap-10 text-justify  lg:grid-cols-2 xl:grid-cols-3'>
             {projects &&
               projects.map((project, index) => (
@@ -35,7 +35,7 @@ export const AviableProjects = ({ projects }: Props) => {
                 </li>
               ))}
           </ul>
-        </Fade>
+        </JackInTheBox>
       </section>
     </main>
   );

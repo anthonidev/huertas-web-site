@@ -31,7 +31,7 @@ export const Navbar = () => {
         }
       });
     };
-
+    sectionsColors;
     // Agregar el evento de desplazamiento al montar el componente
     window.addEventListener('scroll', handleScroll);
 
@@ -44,8 +44,11 @@ export const Navbar = () => {
     <Disclosure
       as='nav'
       className={clsx(
-        'fixed z-50 w-full bg-opacity-95 transition-all duration-500 ease-in-out',
-        sectionsColors.find((section) => section.anchor === currentSection)?.bg
+        'fixed z-50 w-full transition-all duration-500 ease-in-out',
+        sectionsColors.find((section) => section.anchor === currentSection)
+          ?.bg || 'bg-pri bg-opacity-20',
+        sectionsColors.find((section) => section.anchor === currentSection) &&
+          'bg-opacity-95'
       )}
     >
       {({ open }) => (

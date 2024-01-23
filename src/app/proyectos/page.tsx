@@ -18,6 +18,17 @@ export default function ProjectsPage() {
       <Suspense fallback={<SkeletonCard />}>
         <ProjectsAsync />
       </Suspense>
+      <div className='flex flex-col items-center justify-center bg-gradient-to-r from-pri to-sec py-20'>
+        <p className='text-center text-3xl  text-white'>
+          No dejes <strong>pasar</strong>
+          <br /> esta gran <strong>oportunidad</strong>
+          <br />
+          estamos para ti
+        </p>
+        <p className='mt-5 rounded-full bg-pri px-5 py-2 text-2xl font-extrabold text-white'>
+          997 002 337
+        </p>
+      </div>
     </main>
   );
 }
