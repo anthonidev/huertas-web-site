@@ -9,7 +9,7 @@ type InputProps = React.DetailedHTMLProps<
 const Input2 = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   return (
     <>
-      <div className='relative z-0 border p-2 '>
+      <div className='relative z-0 border px-1  xl:p-2 '>
         <input
           ref={ref}
           maxLength={props.maxLength}

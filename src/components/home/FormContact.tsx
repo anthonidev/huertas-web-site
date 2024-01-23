@@ -27,7 +27,7 @@ const FormContact = () => {
     <FormData<FormContact> onSubmit={onSubmit}>
       {({ register, formState: { errors } }) => (
         <div className='my-5 rounded-2xl bg-pri px-10 lg:mx-10 lg:my-0 '>
-          <p className=' py-10 text-center text-lg text-white md:text-3xl '>
+          <p className=' py-10 text-center text-lg text-white md:text-2xl xl:text-3xl '>
             Quiero que me contacten para mayor información
           </p>
 
@@ -113,7 +113,7 @@ const FormContact = () => {
               </button>
             </div>
 
-            <span className='col-span-2 mb-5 text-center text-xs text-white md:text-sm'>
+            <span className='col-span-2 mb-5 text-center text-xs text-white '>
               Al enviar este formulario, aceptas que los datos que nos
               proporcionas se utilicen para responder a tu consulta.
             </span>

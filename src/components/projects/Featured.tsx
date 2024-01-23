@@ -11,7 +11,7 @@ export const Featured = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundBlendMode: 'overlay',
-        backgroundColor: 'rgba(255,255,255,0.5)',
+        backgroundColor: 'rgba(255,255,255,0.7)',
         //brillo maximo
       }}
       id='featured-project'
@@ -22,19 +22,20 @@ export const Featured = () => {
           triggerOnce
           className='mt-10 flex items-center justify-center lg:top-0 lg:w-1/2 '
         >
-          <div className='relative flex '>
+          <div className='relative  flex'>
             <Image
               src='/imgs/altoke.png'
-              className='absolute left-10 top-0 z-10 -rotate-12'
-              width={300}
-              height={300}
+              className='absolute left-10 top-0 z-10 -rotate-12 '
+              width={250}
+              height={250}
               alt='consigue tu lote altoke en inmobiliaria huertas'
             />
 
             <Image
               src='/imgs/foto-familia.png'
-              width={800}
-              height={800}
+              width={1200}
+              height={1200}
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               alt='logo'
             />
           </div>

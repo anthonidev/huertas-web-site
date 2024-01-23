@@ -57,10 +57,7 @@ export const Featured = () => {
             </Link>
           </Zoom>
         </div>
-        <Fade
-          direction='right'
-          className='flex   items-center justify-center lg:mt-20 lg:max-w-lg'
-        >
+        <Fade direction='right' className='flex lg:mt-20   lg:w-5/6 '>
           <FormContact />
         </Fade>
       </div>
