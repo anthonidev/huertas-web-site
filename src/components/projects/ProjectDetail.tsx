@@ -12,7 +12,6 @@ type Props = {
 };
 
 const ProjectDetail = ({ project }: Props) => {
-  console.log(project);
   return (
     <div>
       <BannerPrimary

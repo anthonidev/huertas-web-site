@@ -21,7 +21,7 @@ const PriceFrom = ({
       style={{ backgroundColor: secondary_color }}
       className='relative -left-10 my-20 w-full  rounded-2xl p-7 text-center text-lg text-white lg:p-10 lg:text-2xl'
     >
-      <p>Precio al Contado/ Cuotas</p>
+      <p>Precio al Inicial/ Contado</p>
       <p className='text-xl font-extrabold lg:text-4xl'>
         {FormatCoin(initial, currency)} - {FormatCoin(price, currency)}
       </p>
