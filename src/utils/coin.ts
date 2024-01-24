@@ -9,6 +9,7 @@ let PEN = new Intl.NumberFormat('es-PE', {
 });
 
 const FormatCoin = (coin: number, currency: string) => {
+  currency = currency.toUpperCase();
   let result;
   if (currency === 'USD') {
     result = USDollar.format(coin);
