@@ -4,6 +4,7 @@ import '../styles/globals.css';
 import { Footer, Navbar } from '@/components/navigation';
 import WhatsappButton from '@/components/shared/WhatsappButton';
 import { ProviderToast } from '@/providers/ProviderToast';
+import HeadSocial from '@/components/shared/HeadSocial';
 
 const inter = Montserrat({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={inter.className}>
+        <HeadSocial />
         <Navbar />
         {children}
         <Footer />
