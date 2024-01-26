@@ -24,6 +24,8 @@ interface ProjectDetail extends Project {
   slogan: string;
   separate: number;
   gallery: Gallery[];
+  lng: string;
+  lat: string;
 }
 interface Area {
   id: string;

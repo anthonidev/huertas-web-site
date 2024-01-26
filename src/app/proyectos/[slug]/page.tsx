@@ -19,6 +19,7 @@ export default function Project({ params }: Props) {
 
 async function ProjectAsync({ params }: { params: { slug: string } }) {
   const project = await getProject(params.slug);
+  console.log(project);
   if (!project) return <>error al obtener proyecto del servidor</>;
 
   return (

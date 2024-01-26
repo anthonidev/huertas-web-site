@@ -1,9 +1,9 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Fade, Zoom } from 'react-awesome-reveal';
 import { BeachIcon, CampoIcon } from '../icons/Icons';
 import FormContact from './FormContact';
-import { Fade, Flip, Zoom } from 'react-awesome-reveal';
-import Link from 'next/link';
 
 export const Featured = () => {
   const text = '#TULOTEALTOKE'.split('');

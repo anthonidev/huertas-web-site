@@ -19,14 +19,14 @@ const PriceFrom = ({
   return (
     <div
       style={{ backgroundColor: secondary_color }}
-      className='relative -left-10 my-20 w-full  rounded-2xl p-7 text-center text-lg text-white lg:p-10 lg:text-2xl'
+      className='relative mt-32  w-full  rounded-2xl p-7 text-center text-lg text-white lg:p-10 lg:text-2xl'
     >
       <p>Precio al Inicial/ Contado</p>
       <p className='text-xl font-extrabold lg:text-4xl'>
         {FormatCoin(initial, currency)} - {FormatCoin(price, currency)}
       </p>
       <div
-        className='absolute  -right-16 -top-14 flex animate-bounce   items-center justify-center rounded-2xl text-center text-white'
+        className='absolute  -top-16 right-4 flex animate-bounce   items-center justify-center rounded-2xl text-center text-white'
         style={{
           backgroundImage: 'url("/svg/hexagon.svg")',
           backgroundSize: 'contain',

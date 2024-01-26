@@ -57,6 +57,8 @@ const ProjectDetail = ({ project }: Props) => {
               location={project.location}
               photo_map={project.photo_map}
               title={project.title}
+              lat={project.lat}
+              lng={project.lng}
             />
           </div>
         }
