@@ -120,7 +120,12 @@ const footerSections = ({ items, title }: FooterData) => {
               {type === 'text' ? (
                 <span>{name}</span>
               ) : (
-                <Link href={href}>{name}</Link>
+                <Link
+                  className='transition-all duration-300 ease-in-out hover:-translate-y-2  hover:scale-110 hover:border-b-2 hover:border-white hover:font-bold'
+                  href={href}
+                >
+                  {name}
+                </Link>
               )}
             </li>
           );
@@ -142,7 +147,7 @@ export const Footer = () => {
         <div>{footerSections(itemLegal)}</div>
         <div className='text-white'>
           <p className='my-2 font-bold uppercase'>CONTÁCTANOS</p>
-          <ul className='flex flex-col space-y-2'>
+          <ul className='flex flex-col space-y-2 text-sm'>
             <li>
               <Link
                 href='tel:+51948195923'
