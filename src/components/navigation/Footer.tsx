@@ -138,7 +138,7 @@ const footerSections = ({ items, title }: FooterData) => {
 export const Footer = () => {
   return (
     <footer className=''>
-      <div className='grid  w-full grid-cols-1 gap-10 bg-[#3A8F3B] p-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
+      <div className='grid  w-full grid-cols-1 gap-10 bg-sec p-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
         <div>
           <LogoIcon height={80} width={200} className='text-white' />
           {footerSections(itemSala)}

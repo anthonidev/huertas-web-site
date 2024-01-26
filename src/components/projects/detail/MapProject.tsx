@@ -32,7 +32,7 @@ const MapProject = ({ km, location, photo_map, title, lng, lat }: Props) => {
       </div>
       <div className='mt-5 flex items-center justify-center space-x-5 text-xl'>
         <Link
-          href={`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`}
+          href={`https://www.waze.com/ul?ll=${lat}%2C${lng}&navigate=yes&zoom=17`}
           target='_blank'
           rel='noopener noreferrer'
           className='button2 bg-pri'
@@ -47,7 +47,7 @@ const MapProject = ({ km, location, photo_map, title, lng, lat }: Props) => {
           </svg>
         </Link>
         <Link
-          href={`https://www.waze.com/ul?ll=${lat}%2C${lng}&navigate=yes&zoom=17`}
+          href={`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`}
           target='_blank'
           rel='noopener noreferrer'
           className='button3 bg-pri'
