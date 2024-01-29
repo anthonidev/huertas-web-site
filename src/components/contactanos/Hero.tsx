@@ -1,17 +1,28 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const Hero = () => {
   return (
     <section
-      className='flex min-h-screen items-center justify-center bg-black  bg-opacity-30 bg-pattern'
+      className='flex bg-gradient-to-r from-pri to-sec pt-20'
       id='contactanos'
     >
-      <header className='mx-auto w-full max-w-7xl px-4  sm:px-6 lg:px-8'>
-        <h1 className='flex flex-col  text-4xl font-extrabold text-gray-900'>
-          <span className='text-7xl font-normal text-pri-100'>¡Hola!</span>
-          <span className='text-5xl uppercase text-sec '>como podemos </span>
-          <span className='text-6xl uppercase text-pri '>ayudarte.</span>
-        </h1>
+      <header className='mx-auto flex w-full max-w-7xl flex-col items-center px-4 sm:px-6  lg:flex-row lg:px-8'>
+        <div className='flex h-full basis-1/2 items-end '>
+          <Image
+            src='/imgs/nosotroschica.png'
+            width={500}
+            height={500}
+            alt='logo'
+          />
+        </div>
+
+        <div className='flex h-full basis-1/2 flex-col items-center justify-center space-y-2  text-pri'>
+          <Image src='/imgs/altoque.png' width={400} height={300} alt='logo' />
+          <p className='mx-auto  text-center   text-xl text-white md:text-2xl lg:text-3xl xl:text-4xl'>
+            No dejes pasar <br /> esta gran oportunidad <br /> estamos para ti
+          </p>
+        </div>
       </header>
     </section>
   );

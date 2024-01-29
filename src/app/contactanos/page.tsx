@@ -1,4 +1,4 @@
-import { Contact, ContactForm, Hero } from '@/components/contactanos';
+import { ContactForm, Hero } from '@/components/contactanos';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,7 +11,6 @@ export default function ContactPage() {
   return (
     <main>
       <Hero />
-      <Contact />
       <ContactForm />
     </main>
   );
