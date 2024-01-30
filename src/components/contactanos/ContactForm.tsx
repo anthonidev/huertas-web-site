@@ -28,7 +28,7 @@ export const ContactForm = () => {
     <section className='  my-10 bg-pattern p-5 lg:p-20' id='contactanos-form'>
       <div className='mx-auto flex w-full max-w-7xl flex-col px-4  sm:px-6  md:flex-row lg:px-8'>
         <div className='flex basis-1/2 flex-col space-y-7 '>
-          <h1 className=' w-36 border-b-4 border-pri  text-3xl font-extrabold text-sec md:text-4xl'>
+          <h1 className=' w-36 border-b-4 border-pri  text-3xl font-extrabold text-sec md:text-4xl lg:text-5xl'>
             CONTÁCTANOS
           </h1>
           <p className=' max-w-sm text-pri'>
@@ -59,13 +59,13 @@ export const ContactForm = () => {
         </div>
         <FormData<FormContact> onSubmit={onSubmit}>
           {({ register, formState: { errors } }) => (
-            <div className='my-5 rounded-2xl  bg-gray-100 px-10 lg:mx-0 lg:my-0'>
+            <div className='my-5 rounded-[45px]  bg-[#EDEDED] px-10 lg:mx-0 lg:my-0'>
               <p className=' py-10  text-center text-3xl text-pri md:text-3xl '>
                 Quiero adquirir un
                 <br />
                 <strong>LOTE PROPIO</strong>
               </p>
-              <p className='m-auto  mb-5 w-full max-w-sm text-center text-pri'>
+              <p className='m-auto mb-10 w-full max-w-sm text-center text-sm text-pri'>
                 Déjanos tus datos y un asesor se contactará contigo lo antes
                 posible.
               </p>
@@ -138,17 +138,17 @@ export const ContactForm = () => {
                     })}
                   />
                 </div>
-                <div className='col-span-2 flex items-center justify-center'>
+                <div className='col-span-2 my-4 flex items-center justify-center'>
                   <button
                     type='submit'
-                    className='  rounded-xl bg-sec px-7 py-4 uppercase text-white'
+                    className='  rounded-xl bg-[#00861D] px-7 py-2 text-sm font-bold  text-white'
                     disabled={loading}
                   >
                     Solicitar información
                   </button>
                 </div>
 
-                <span className='col-span-2 mx-auto mb-5 max-w-sm text-center text-xs text-pri md:text-sm'>
+                <span className='col-span-2 mx-auto mb-5 max-w-sm text-center text-[10px] text-pri '>
                   Al enviar este formulario, aceptas que los datos que nos
                   proporcionas se utilicen para responder a tu consulta.
                 </span>
