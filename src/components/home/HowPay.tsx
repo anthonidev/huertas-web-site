@@ -12,7 +12,7 @@ export const HowPay = () => {
           <Fade triggerOnce={true} direction='left'>
             <h2 className='text-base text-pri-200 md:text-xl lg:text-3xl xl:text-5xl'>
               <span className=' text-2xl font-extrabold md:text-4xl lg:text-5xl xl:text-7xl'>
-                ¡Que hoy
+                ¡Qué hoy
               </span>
               sea tu mejor
             </h2>
@@ -34,7 +34,7 @@ export const HowPay = () => {
         </header>
         <main>
           <p className='py-10 text-center  text-2xl font-bold uppercase tracking-tight text-pri-200 md:text-4xl lg:text-5xl xl:text-6xl'>
-            ¿PORQUÉ
+            ¿POR QUÉ
             <span className='mx-3 bg-sec px-2 font-extrabold uppercase text-white'>
               COMPRAR
             </span>

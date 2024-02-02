@@ -23,7 +23,7 @@ export const TrustHuertas = (props: Props) => {
           <p className='text-xl font-light tracking-wider text-pri md:text-2xl'>
             Invierte con confianza en un futuro <br /> seguro para tu familia.{' '}
             <br /> ¡Ahora tener
-            <span className=' font-extrabold'> TÚ LOTE ES ALTOKE!</span>
+            <span className=' font-extrabold'> TU LOTE ES ALTOKE!</span>
           </p>
           <Link
             href='/nosotros'

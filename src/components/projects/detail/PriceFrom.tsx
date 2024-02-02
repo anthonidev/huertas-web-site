@@ -25,7 +25,7 @@ const PriceFrom = ({
       <p className='text-xl font-extrabold lg:text-4xl'>
         {FormatCoin(initial, currency)} - {FormatCoin(price, currency)}
       </p>
-      <div
+      {/* <div
         className='absolute  -top-16 right-4 flex animate-bounce   items-center justify-center rounded-2xl text-center text-white'
         style={{
           backgroundImage: 'url("/svg/hexagon.svg")',
@@ -40,7 +40,7 @@ const PriceFrom = ({
             {FormatCoin(separate, currency)}
           </span>
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
