@@ -19,7 +19,7 @@ export const InfoEnterprise = () => {
             <div className='absolute bottom-0 top-0 h-full   bg-white p-[0.5px]' />
             <MissionIcon className='z-10 h-16 w-16 animate-bounce rounded-full bg-sec p-1 text-white' />
           </div>
-          <p className='max-w-[16rem] text-justify text-white'>
+          <p className='max-w-[16rem]  text-white'>
             <strong>Brindamos soluciones inmobiliarias</strong> personalizadas
             que generan valor, contribuyendo al desarrollo de nuestra ciudad con
             propiedades de alta rentabilidad y servicio excepcional.
@@ -39,7 +39,7 @@ export const InfoEnterprise = () => {
             <div className='absolute bottom-0 top-0 h-full   bg-white p-[0.5px]' />
             <VisionIcon className='z-10 h-16 w-16 animate-bounce rounded-full bg-sec p-1 text-white' />
           </div>
-          <p className='max-w-[16rem] text-justify text-white'>
+          <p className='max-w-[16rem]  text-white'>
             Ser la referencia líder en el{' '}
             <strong>mercado inmobiliario peruano,</strong> destacando por un
             servicio excelente y relaciones confiables, impulsando el progreso
@@ -59,7 +59,7 @@ export const InfoEnterprise = () => {
             <div className='absolute bottom-0 top-0 h-full   bg-white p-[0.5px]' />
             <YearExpIcon className=' z-10 h-16 w-16 animate-bounce rounded-full bg-sec p-1 text-white' />
           </div>
-          <p className='max-w-[16rem] text-justify text-white'>
+          <p className='max-w-[16rem] text-white'>
             En el sector inmobiliario en Lima, hemos construido una sólida
             reputación como referentes confiables,{' '}
             <strong>

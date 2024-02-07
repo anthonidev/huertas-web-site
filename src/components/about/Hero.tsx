@@ -20,7 +20,7 @@ export const Hero = () => {
               SOMOS?
             </span>
           </div>
-          <p className='  mt-3 max-w-sm text-justify text-base text-pri'>
+          <p className='  mt-3 max-w-sm  text-base text-pri'>
             Somos una empresa <strong> 100% peruana </strong> , desarrollando
             proyectos inmobiliarios de casa de campo y playa para todas las
             familias peruanas. Contamos con exclusivos condominios en el norte y

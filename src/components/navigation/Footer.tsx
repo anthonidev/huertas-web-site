@@ -104,8 +104,16 @@ const itemQuienesSomos = {
 const itemLegal = {
   title: 'Legal',
   items: [
-    { name: 'Términos y condiciones', href: './', type: 'link' },
-    { name: 'Política de privacidad', href: './', type: 'link' },
+    {
+      name: 'Términos y condiciones',
+      href: './terminos-y-condiciones',
+      type: 'link',
+    },
+    {
+      name: 'Política de privacidad',
+      href: './politica-de-privacidad',
+      type: 'link',
+    },
   ],
 };
 

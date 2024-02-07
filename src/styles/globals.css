@@ -445,3 +445,19 @@ html {
     transition-duration: 0.3s;
   }
 }
+
+@layer components {
+  .title_seccion {
+    @apply mt-16 text-2xl font-bold   tracking-tight text-gray-800;
+  }
+  .title_text {
+    @apply text-2xl font-bold text-gray-800;
+  }
+
+  .subtitle_text {
+    @apply mt-5 text-lg font-semibold text-gray-600;
+  }
+  .text {
+    @apply mt-5 text-justify text-base font-normal text-gray-500;
+  }
+}
