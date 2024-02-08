@@ -95,8 +95,8 @@ const stepsgetland = [
   },
   {
     icon: StepGetIcon,
-    title: 'Separalo',
-    description: 'Puedes separar tu lote desde s/100',
+    title: 'Visitanos',
+    description: 'En nuestras oficinas para conocer nuestros proyectos',
   },
   {
     icon: StepBuyIcon,

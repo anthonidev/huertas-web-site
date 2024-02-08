@@ -1,8 +1,7 @@
 'use client';
-import React from 'react';
-import { MissionIcon, VisionIcon, YearExpIcon } from '../icons/Icons';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
+import { MissionIcon, VisionIcon, YearExpIcon } from '../icons/Icons';
 
 export const InfoEnterprise = () => {
   return (
