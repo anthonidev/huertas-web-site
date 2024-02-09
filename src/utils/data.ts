@@ -76,12 +76,12 @@ const stats = [
   },
   {
     icon: HandFamilyIcon,
-    title: '+ DE 3,000',
-    description: 'Lotes vendidos en nuestros proyectos.',
+    title: '+ DE 2,000',
+    description: 'Compraron en nuestros proyectos.',
   },
   {
     icon: HandFamilyIcon,
-    title: '+ DE 3,000',
+    title: '+ DE 3,000 m² ',
     description: 'Áreas verdes entregadas.',
   },
 ];
