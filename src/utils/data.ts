@@ -66,12 +66,12 @@ const howtopay = [
 const stats = [
   {
     icon: BarMoneyIcon,
-    title: '+ 6 AÑOS',
+    title: '+ 8 AÑOS',
     description: 'de experiencia en el mercado.',
   },
   {
     icon: HandFamilyIcon,
-    title: '+ DE 7 PROYECTOS',
+    title: '+ DE 4 PROYECTOS',
     description: 'con la mejor eficiencia de construcción.',
   },
   {
