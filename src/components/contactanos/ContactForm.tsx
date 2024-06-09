@@ -160,3 +160,28 @@ export const ContactForm = () => {
     </section>
   );
 };
+//
+//
+// "use client"
+// import { Fade } from 'react-awesome-reveal';
+// import FormContact from '@/components/home/FormContact';
+// import Link from 'next/link';
+// import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+//
+// type Props = {}
+//
+// const SectionForm = ({}:Props) => {
+//   return (
+//     <section className='my-10 bg-pattern p-5 lg:p-20' id='contactanos-form'>
+//       <Fade direction='right' className='flex lg:mb-32 mx-auto flex-row  max-w-7xl   '>
+//         <div className="max-w-lg">
+//           <FormContact />
+//
+//         </div>
+//
+//       </Fade>
+//     </section>
+//
+//   )
+// }
+// export default SectionForm
