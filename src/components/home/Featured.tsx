@@ -16,7 +16,7 @@ export const Featured = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundBlendMode: 'overlay',
-        backgroundColor: 'rgba(0,0,0,0.3)',
+        backgroundColor: 'rgba(0,0,0,0.2)',
       }}
     >
       <div className='mx-auto flex h-full  max-w-7xl flex-col items-stretch justify-between px-4 sm:px-6 lg:flex-row lg:space-x-5 lg:px-8'>
@@ -57,9 +57,7 @@ export const Featured = () => {
             </Link>
           </Zoom>
         </div>
-        <Fade direction='right' className='flex lg:mt-20   lg:w-5/6 '>
-          <FormContact />
-        </Fade>
+
       </div>
     </header>
   );
