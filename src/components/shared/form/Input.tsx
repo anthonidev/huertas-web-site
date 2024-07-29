@@ -8,7 +8,7 @@ type InputProps = React.DetailedHTMLProps<
 // eslint-disable-next-line react/display-name
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   return (
-    <div>
+    <>
       <div className='relative z-0 rounded-lg bg-white p-2 '>
         <input
           ref={ref}
@@ -27,7 +27,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           {props['aria-errormessage']}
         </span>
       )}
-    </div>
+    </>
   );
 });
 

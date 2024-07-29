@@ -46,7 +46,7 @@ export const Navbar = () => {
       className={clsx(
         'fixed  z-50 w-full transition-all duration-500 ease-in-out',
         sectionsColors.find((section) => section.anchor === currentSection)
-          ?.bg || 'bg-pri bg-opacity-20',
+          ?.bg || 'bg-pri ',
         sectionsColors.find((section) => section.anchor === currentSection) &&
           'bg-opacity-95'
       )}
@@ -77,11 +77,19 @@ export const Navbar = () => {
                     </Link>
                   );
                 })}
+
+                <Link
+                  href='/paga-aqui'
+                  className=' m-5 flex border-1 border-dashed cursor-pointer items-center justify-center rounded-md  bg-pri px-4 py-2 font-light text-white'
+                >
+                  Pagar aquí
+                </Link>
               </div>
 
               <div className='-mr-2 flex items-center sm:hidden'>
                 <Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
                   <span className='absolute -inset-0.5' />
+
                   <span className='sr-only'>Open main menu</span>
                   {open ? (
                     <XMarkIcon className='block h-6 w-6' aria-hidden='true' />
@@ -106,6 +114,12 @@ export const Navbar = () => {
                   </Link>
                 );
               })}
+              <Link
+                href='/paga-aqui'
+                className=' m-5 flex border-1 border-dashed cursor-pointer items-center justify-center rounded-md  bg-pri px-4 py-2 font-light text-white'
+              >
+                Pagar aquí
+              </Link>
             </div>
           </Disclosure.Panel>
         </>

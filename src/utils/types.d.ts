@@ -54,3 +54,17 @@ interface Comment {
   occupation: string;
   photo: string;
 }
+
+interface FormPayHere {
+  firstname: string;
+  lastname: string;
+  email: string;
+  phone: string;
+  policy: boolean;
+  amount: number;
+
+  country: string;
+  department: string;
+  province: string;
+  district: string;
+}

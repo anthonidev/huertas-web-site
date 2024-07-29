@@ -5,6 +5,7 @@ import { Footer, Navbar } from '@/components/navigation';
 import WhatsappButton from '@/components/shared/WhatsappButton';
 import { ProviderToast } from '@/providers/ProviderToast';
 import HeadSocial from '@/components/shared/HeadSocial';
+import { ProviderUI } from '@/providers/ProviderUI';
 
 const inter = Montserrat({ subsets: ['latin'] });
 
@@ -22,12 +23,14 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={inter.className}>
-        <HeadSocial />
-        <Navbar />
-        {children}
-        <Footer />
-        <WhatsappButton />
-        <ProviderToast />
+        <ProviderUI>
+          <HeadSocial />
+          <Navbar />
+          {children}
+          <Footer />
+          <WhatsappButton />
+          <ProviderToast />
+        </ProviderUI>
       </body>
     </html>
   );
