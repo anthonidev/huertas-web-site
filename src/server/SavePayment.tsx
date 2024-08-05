@@ -5,7 +5,7 @@ export const SavePaymentService = async (data: FormPayHere) => {
   let send = true;
 
   await http
-    .post(`/api/web/payment/`, JSON.stringify(data))
+    .post(`/api/web/payweb/`, JSON.stringify(data))
     .then((res) => {
       toast.success('Mensaje enviado correctamente');
       send = true;

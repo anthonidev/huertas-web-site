@@ -5,22 +5,33 @@ import { SubmitHandler } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import PaymentSummary from './PaymentSummary';
 import SectionClient from './SectionClient';
+import { createPaymentOrder } from '@/server/actions/payments';
+import { useRouter } from 'next/navigation';
 
 const FormPayHere = () => {
   const [loading, setLoading] = useState(false);
-  const onSubmit: SubmitHandler<FormPayHere> = (data, event: any) => {
-    console.log(data);
-    if (!data.policy) {
-      toast.error('Debes aceptar las políticas de privacidad', {
-        position: 'bottom-right',
-      });
-    }
-    setLoading(true);
-    console.log(data);
-    toast.success('Pago realizado con éxito', {
-      position: 'top-right',
-    });
-    setLoading(false);
+  const { push } = useRouter();
+
+  const onSubmit: SubmitHandler<FormPayHere> = (data) => {
+    // setLoading(true);
+    let data_send = data;
+    data_send.amount = Math.round(data.amount * 100);
+    console.log(data_send);
+
+    // createPaymentOrder(data_send)
+    //   .then((res: ResponsePayHere) => {
+    //     if (res.status === 'pending') {
+    //       toast.success('Orden creada correctamente');
+    //       window.open(res.url_payment, '_blank');
+    //       push("paga-aqui/" + res.id);
+    //     } else {
+    //       toast.error('Ocurrió un error al procesar el pago');
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     toast.error('Ocurrió un error al procesar el pago');
+    //   })
+    //   .finally(() => setLoading(false));
   };
 
   return (
@@ -32,7 +43,11 @@ const FormPayHere = () => {
             <SectionClient register={register} watch={watch} setValue={setValue} errors={errors} />
           </div>
           <div className="w-full md:basis-1/2">
-            <PaymentSummary amount={watch('amount')?.toString() || '5000'} loading={loading} />
+            <PaymentSummary
+              amount={watch('amount')?.toString() || '5000'}
+              loading={loading}
+              currency={watch('currency')}
+            />
           </div>
         </div>
       )}

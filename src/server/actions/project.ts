@@ -34,6 +34,8 @@ const getProject = async (slug: string) => {
   }
 };
 
+
+
 const getComments = async () => {
   const res = await fetch(`${apiUrl}/api/web/front/comments/`, {
     cache: 'no-store',

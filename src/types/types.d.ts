@@ -55,16 +55,38 @@ interface Comment {
   photo: string;
 }
 
-interface FormPayHere {
+
+interface Client {
+  document: string;
   firstname: string;
   lastname: string;
   email: string;
   phone: string;
-  policy: boolean;
-  amount: number;
-
-  country: string;
   department: string;
   province: string;
+  country: string;
   district: string;
+}
+
+interface FormPayHere {
+  amount:number;
+  currency: string;
+  description: string;
+  order_id: string;
+  client: Client;
+  policy: boolean;
+}
+
+interface ResponsePayHere {
+  id:string;
+  amount:number;
+  currency: string;
+  description: string;
+  status: 'pending' | 'approved' | 'rejected' | 'cancelled' | 'abandoned';
+  transaction_id: string;
+  client: Client;
+  created_at: string;
+  updated_at: string;
+  url_payment: string;
+  date_expiration: string;
 }

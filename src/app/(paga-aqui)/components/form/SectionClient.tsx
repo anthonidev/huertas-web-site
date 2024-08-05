@@ -40,15 +40,15 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
     districts.filter((district) => district.province_id === provinceId);
 
   const handleSelect =
-    (field: 'department' | 'province' | 'district') =>
+    (field: 'client.department' | 'client.province' | 'client.district') =>
     (e: React.ChangeEvent<HTMLSelectElement>) => {
-      if (field === 'province') {
-        setValue('district', '');
+      if (field === 'client.province') {
+        setValue('client.district', '');
       }
 
-      if (field === 'department') {
-        setValue('province', '');
-        setValue('district', '');
+      if (field === 'client.department') {
+        setValue('client.province', '');
+        setValue('client.district', '');
       }
 
       setValue(`${field}`, e.target.value);
@@ -60,9 +60,9 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
         label="Nombres"
         variant="underlined"
         isRequired
-        isInvalid={!!errors.firstname}
-        errorMessage={errors.firstname?.message}
-        {...register('firstname', {
+        isInvalid={!!errors.client?.firstname}
+        errorMessage={errors.client?.firstname?.message}
+        {...register('client.firstname', {
           required: 'Este campo es obligatorio',
           pattern: {
             value: /^[a-zA-Z\s]*$/,
@@ -74,9 +74,9 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
         label="Apellidos"
         variant="underlined"
         isRequired
-        isInvalid={!!errors.lastname}
-        errorMessage={errors.lastname?.message}
-        {...register('lastname', {
+        isInvalid={!!errors.client?.lastname}
+        errorMessage={errors.client?.lastname?.message}
+        {...register('client.lastname', {
           required: 'Este campo es obligatorio',
           pattern: {
             value: /^[a-zA-Z\s]*$/,
@@ -84,14 +84,28 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
           },
         })}
       />
+      <Input
+        label="DNI"
+        variant="underlined"
+        isRequired
+        isInvalid={!!errors.client?.document}
+        errorMessage={errors.client?.document?.message}
+        {...register('client.document', {
+          required: 'Este campo es obligatorio',
+          minLength: { value: 8, message: 'Debe tener 8 dígitos' },
+          maxLength: { value: 8, message: 'Debe tener 8 dígitos' },
+        })}
+        onKeyDown={(e) => onlyNumber(e)}
+        maxLength={8}
+      />
 
       <Input
         label="Correo electrónico"
         variant="underlined"
         isRequired
-        isInvalid={!!errors.email}
-        errorMessage={errors.email?.message}
-        {...register('email', {
+        isInvalid={!!errors?.client?.email}
+        errorMessage={errors?.client?.email?.message}
+        {...register('client.email', {
           required: 'Este campo es obligatorio',
           pattern: {
             value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
@@ -99,20 +113,37 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
           },
         })}
       />
+
       <Input
         label="Teléfono"
         variant="underlined"
         isRequired
-        isInvalid={!!errors.phone}
+        isInvalid={!!errors?.client?.phone}
         maxLength={9}
-        errorMessage={errors.phone?.message}
-        {...register('phone', {
+        errorMessage={errors?.client?.phone?.message}
+        {...register('client.phone', {
           required: 'Este campo es obligatorio',
           minLength: { value: 9, message: 'Debe tener 9 dígitos' },
           maxLength: { value: 9, message: 'Debe tener 9 dígitos' },
         })}
         onKeyDown={(e) => onlyNumber(e)}
       />
+      <Select
+        isRequired
+        label="Tipo de moneda"
+        variant="underlined"
+        {...register('currency', {
+          required: 'Este campo es obligatorio',
+        })}
+        defaultSelectedKeys={['PEN']}
+      >
+        <SelectItem key="PEN" value="PEN">
+          Soles
+        </SelectItem>
+        <SelectItem key="USD" value="USD">
+          Dólares
+        </SelectItem>
+      </Select>
 
       <Input
         label="Monto a pagar"
@@ -124,39 +155,52 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
           required: 'Este campo es obligatorio',
           min: { value: 5000, message: 'El monto mínimo es 5000' },
           max: { value: 32000, message: 'El monto máximo es 32000' },
+          pattern: {
+            value: /^(?!0\d)(?!.*\.\d{3,})\d*(?:\.\d{2})?$/,
+            message: 'Solo se permiten números con hasta dos decimales',
+          },
         })}
         min={5000}
         defaultValue={'5000'}
-        type="number"
+        type="decimal"
         startContent={
-          <div className="text-gray-500">
-            <span>$</span>
-          </div>
+          <div className="text-gray-500">{watch('currency') === 'PEN' ? 'S/' : '$'}</div>
         }
+      />
+      <input type="hidden" {...register('client.country')} value="Perú" />
+      <input
+        type="hidden"
+        {...register('order_id')}
+        value={'HUERTAS-ORDER-' + new Date().getTime().toString(36).toUpperCase()}
+      />
+      <input
+        type="hidden"
+        {...register('description')}
+        value="Orden de pago huertas inmobiliaria"
       />
 
       {renderSelect(
         departments,
         'Departamento',
-        watch('department'),
-        handleSelect('department'),
+        watch('client.department'),
+        handleSelect('client.department'),
         'Selecciona un departamento',
       )}
 
-      {watch('department') &&
+      {watch('client.department') &&
         renderSelect(
-          getProvinces(watch('department')),
+          getProvinces(watch('client.department')),
           'Provincia',
-          watch('province'),
-          handleSelect('province'),
+          watch('client.province'),
+          handleSelect('client.province'),
         )}
 
-      {watch('province') &&
+      {watch('client.province') &&
         renderSelect(
-          getDistricts(watch('province')),
+          getDistricts(watch('client.province')),
           'Distrito',
-          watch('district'),
-          handleSelect('district'),
+          watch('client.district'),
+          handleSelect('client.district'),
         )}
 
       <Checkbox
