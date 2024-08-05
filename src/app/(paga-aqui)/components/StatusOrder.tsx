@@ -24,20 +24,19 @@ const StatusOrder = ({ status, link, date_expiration }: Props) => {
   const isDateValid = dayjs().isBefore(dayjs(date_expiration));
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
-  const [conf,setConf]=useState(false);
+  const [conf, setConf] = useState(false);
 
   useEffect(() => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
-    if (status==="approved"){
-      setConf(true)
+    if (status === 'approved') {
+      setConf(true);
       setTimeout(() => {
-        setConf(false)
+        setConf(false);
       }, 5000);
     }
-  }, []);
-  return(
-
+  }, [status]);
+  return (
     <div className="mt-5 rounded border p-4 shadow-md">
       <div className="mb-2">
         <span className="font-bold">Estado: </span>
