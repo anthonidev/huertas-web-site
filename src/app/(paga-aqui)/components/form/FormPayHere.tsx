@@ -13,25 +13,24 @@ const FormPayHere = () => {
   const { push } = useRouter();
 
   const onSubmit: SubmitHandler<FormPayHere> = (data) => {
-    // setLoading(true);
     let data_send = data;
-    data_send.amount = Math.round(data.amount * 100);
-    console.log(data_send);
+    // data_send.amount = Math.round(data.amount * 100);
 
-    // createPaymentOrder(data_send)
-    //   .then((res: ResponsePayHere) => {
-    //     if (res.status === 'pending') {
-    //       toast.success('Orden creada correctamente');
-    //       window.open(res.url_payment, '_blank');
-    //       push("paga-aqui/" + res.id);
-    //     } else {
-    //       toast.error('Ocurrió un error al procesar el pago');
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     toast.error('Ocurrió un error al procesar el pago');
-    //   })
-    //   .finally(() => setLoading(false));
+    createPaymentOrder(data_send)
+      .then((res: false | ResponsePayHere) => {
+        console.log('RES', res);
+        if (res && res.status === 'pending') {
+          toast.success('Orden creada correctamente');
+          window.open(res.url_payment, '_blank');
+          push('paga-aqui/' + res.id);
+        } else {
+          toast.error('Ocurrió un error al procesar el pago1');
+        }
+      })
+      .catch((error) => {
+        toast.error('Ocurrió un error al procesar el pago2');
+      })
+      .finally(() => setLoading(false));
   };
 
   return (

@@ -3,6 +3,7 @@ const apiUrl = process.env.API_URL;
 const getProjects = async () => {
   try {
     const res = await fetch(`${apiUrl}/api/web/front/projects/client/`, {
+      cache: 'no-store',
       headers: {
         Accept: 'application/json',
       },
@@ -20,6 +21,7 @@ const getProjects = async () => {
 const getProject = async (slug: string) => {
   try {
     const res = await fetch(`${apiUrl}/api/web/front/projects/client/${slug}/`, {
+      cache: 'no-store',
       headers: {
         Accept: 'application/json',
       },
