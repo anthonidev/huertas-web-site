@@ -12,9 +12,14 @@ const getProjects = async () => {
     if (res.status === 404 || res.status === 500) {
       throw new Error(`Request failed with status code ${res.status}`);
     }
+    if (res.status ===200 || res.status === 201) {
     return (await res.json()) as Project[];
+    }
+    else {
+      return false
+    }
   } catch (error: any) {
-    throw new Error(error.message);
+    return false
   }
 };
 
