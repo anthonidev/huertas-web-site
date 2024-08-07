@@ -14,7 +14,8 @@ const FormPayHere = () => {
 
   const onSubmit: SubmitHandler<FormPayHere> = (data) => {
     let data_send = data;
-    // data_send.amount = Math.round(data.amount * 100);
+    data_send.amount = Math.round(data.amount * 100);
+    
 
     createPaymentOrder(data_send)
       .then((res: false | ResponsePayHere) => {

@@ -44,7 +44,7 @@ const ValidateOrder = ({ order }: Props) => {
               ))}
             </div>
             <div className="w-full md:basis-1/2">
-              <PaymentSummary  amount={order.amount.toString()} loading={false} status={order.status} currency={order.currency} />
+              <PaymentSummary  amount={order.amount.toString()} loading={false} status={order.status} currency={order.currency} order={true}/>
             </div>
           </div>
         </div>
