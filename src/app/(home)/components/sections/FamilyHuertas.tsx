@@ -5,14 +5,15 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 type Props = {
-  comments: Comment[];
+  // comments: Comment[];
+  comments: any;
 };
 
 export const FamilyHuertas = ({ comments }: Props) => {
-  const [render, setRender] = useState(false);
-  useEffect(() => {
-    setRender(true);
-  }, [comments]);
+  // const [render, setRender] = useState(false);
+  // useEffect(() => {
+  //   setRender(true);
+  // }, [comments]);
   return (
     <main className="bg-pattern" id="familia-huertas">
       <header
@@ -32,7 +33,7 @@ export const FamilyHuertas = ({ comments }: Props) => {
           </div>
         </div>
       </header>
-      <div className="pt-40">
+      {/* <div className="pt-40">
         {render && (
           <AliceCarousel
             mouseTracking
@@ -75,9 +76,7 @@ export const FamilyHuertas = ({ comments }: Props) => {
 
                   <div className="absolute left-0 top-1 space-y-4 px-16 py-7 md:top-1/4">
                     <p className="w-full p-4 text-justify text-xs font-light sm:text-lg md:text-lg">
-                      {/* <ComillasStartIcon className=' hidden h-16 w-16 text-pri md:block' /> */}
                       {item.comment}
-                      {/* <ComillasEndIcon className=' hidden h-16 w-16 text-pri md:block' /> */}
                     </p>
                   </div>
                 </div>
@@ -85,7 +84,7 @@ export const FamilyHuertas = ({ comments }: Props) => {
             ))}
           />
         )}
-      </div>
+      </div> */}
     </main>
   );
 };

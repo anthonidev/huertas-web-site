@@ -10,16 +10,15 @@ const getProjects = async () => {
     });
 
     if (res.status === 404 || res.status === 500) {
-      throw new Error(`Request failed with status code ${res.status}`);
+      return false;
     }
-    if (res.status ===200 || res.status === 201) {
-    return (await res.json()) as Project[];
-    }
-    else {
-      return false
+    if (res.status === 200 || res.status === 201) {
+      return (await res.json()) as Project[];
+    } else {
+      return false;
     }
   } catch (error: any) {
-    return false
+    return false;
   }
 };
 
@@ -33,15 +32,14 @@ const getProject = async (slug: string) => {
     });
 
     if (res.status === 404 || res.status === 500) {
-      throw new Error(`Request failed with status code ${res.status}`);
+      // throw new Error(`Request failed with status code ${res.status}`);
+      return false;
     }
     return (await res.json()) as ProjectDetail;
   } catch (error: any) {
     throw new Error(error.message);
   }
 };
-
-
 
 const getComments = async () => {
   const res = await fetch(`${apiUrl}/api/web/front/comments/`, {
@@ -52,11 +50,44 @@ const getComments = async () => {
     },
   });
   if (res.status === 404 || res.status === 500) {
-    throw new Error(`Request failed with status code ${res.status}`);
+    // throw new Error(`Request failed with status code ${res.status}`);
+    return false;
   }
 
   const comments = (await res.json()) as Comment[];
   return comments;
 };
 
-export { getProjects, getProject, getComments };
+const SendMessageService = async (data: FormContact, project?: string) => {
+  if (project === undefined) project = '';
+
+  const sendData = {
+    first_name: data.firstname,
+    last_name: data.lastname,
+    email: data.email,
+    phone: data.phone,
+    message: data.message,
+    project_lead: project,
+  };
+
+  try {
+    const res = await fetch(`${apiUrl}/api/web/leads/`, {
+      method: 'POST',
+      cache: 'no-store',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(sendData),
+    });
+    if (res.status === 404 || res.status === 500) {
+      return false;
+    }
+    return true;
+  } catch (error: any) {
+    console.log('ERRORRRRRR');
+    return false;
+  }
+};
+
+export { getProjects, getProject, getComments, SendMessageService };

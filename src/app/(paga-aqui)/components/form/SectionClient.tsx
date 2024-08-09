@@ -135,7 +135,7 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
         {...register('currency', {
           required: 'Este campo es obligatorio',
         })}
-        defaultSelectedKeys={['PEN']}
+        defaultSelectedKeys={['USD']}
       >
         <SelectItem key="PEN" value="PEN">
           Soles

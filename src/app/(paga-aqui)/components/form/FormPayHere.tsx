@@ -13,13 +13,11 @@ const FormPayHere = () => {
   const { push } = useRouter();
 
   const onSubmit: SubmitHandler<FormPayHere> = (data) => {
+    setLoading(true);
     let data_send = data;
     data_send.amount = Math.round(data.amount * 100);
-    
-
     createPaymentOrder(data_send)
       .then((res: false | ResponsePayHere) => {
-        console.log('RES', res);
         if (res && res.status === 'pending') {
           toast.success('Orden creada correctamente');
           window.open(res.url_payment, '_blank');

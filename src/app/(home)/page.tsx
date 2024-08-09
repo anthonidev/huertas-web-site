@@ -33,6 +33,6 @@ async function ProjectsAsync() {
 
 async function CommentsAsync() {
   const comments = await getComments();
-  if (!comments) return <>error al obtener proyectos del servidor</>;
+  // if (!comments) return <>error al obtener proyectos del servidor</>;
   return <FamilyHuertas comments={comments} />;
 }

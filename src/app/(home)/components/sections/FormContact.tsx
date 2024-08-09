@@ -1,26 +1,17 @@
 'use client';
 import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
-import { onlyLetter, onlyNumber } from '@/utils/validate';
-import { useState } from 'react';
-import { SubmitHandler } from 'react-hook-form';
-import { CursorArrowRaysIcon } from '@heroicons/react/24/solid';
 import TextArea2 from '@/components/shared/form/TextArea2';
+import useMessageStore from '@/context/message-store';
+import { onlyLetter, onlyNumber } from '@/utils/validate';
+import { CursorArrowRaysIcon } from '@heroicons/react/24/solid';
+import { SubmitHandler } from 'react-hook-form';
 
 const FormContact = () => {
-  const [loading, setLoading] = useState(false);
+  const { loading, sendMessage } = useMessageStore();
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
-    setLoading(true);
-    // SendMessageSevice(data)
-    //   .then((send) => {
-    //     if (send) {
-    //       event.target.reset();
-    //     }
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
+    sendMessage(data, event);
   };
   return (
     <FormData<FormContact> onSubmit={onSubmit}>

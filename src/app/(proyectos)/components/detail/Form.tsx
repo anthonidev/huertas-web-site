@@ -2,6 +2,8 @@
 import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
 import TextArea2 from '@/components/shared/form/TextArea2';
+import useMessageStore from '@/context/message-store';
+import { SendMessageService } from '@/server/actions/project';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
 import { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
@@ -15,19 +17,10 @@ type Props = {
 };
 
 const Form = ({ project, primary_color, secondary_color, tertiary_color }: Props) => {
-  const [loading, setLoading] = useState(false);
+  const { loading, sendMessage } = useMessageStore();
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
-    setLoading(true);
-    // SendMessageSevice(data, project)
-    //   .then((send) => {
-    //     if (send) {
-    //       event.target.reset();
-    //     }
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
+    sendMessage(data, event);
   };
   return (
     <Fade triggerOnce direction="right">
