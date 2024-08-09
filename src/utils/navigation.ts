@@ -6,7 +6,7 @@ const navigationLinks = [
 
   {
     title: 'Proyectos',
-    href: '/proyectos',
+    href: '/proyectos-inmobiliaria-huertas',
   },
   {
     title: 'Contáctanos',
