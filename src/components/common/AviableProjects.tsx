@@ -11,11 +11,7 @@ export const AviableProjects = ({ projects }: Props) => {
     <main className="bg-pattern" id="proyectos-disponibles">
       <section className="mx-auto mt-10 flex min-h-screen max-w-7xl flex-col justify-evenly bg-cover bg-center px-4 sm:px-6 lg:mt-20 lg:px-8">
         <header className="flex w-20 flex-col items-start border-b-[10px] border-pri pt-20 md:w-24 lg:w-32 xl:w-72">
-          <Fade
-            direction="left"
-            // only one view
-            triggerOnce={true}
-          >
+          <Fade direction="left" triggerOnce={true}>
             <h2 className="mt-2 text-start text-3xl font-extrabold uppercase text-sec md:text-4xl lg:text-5xl xl:text-6xl">
               PROYECTOS
               <br /> <span className="text-pri">DISPO</span>NIBLES

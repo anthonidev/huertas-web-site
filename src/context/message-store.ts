@@ -4,14 +4,14 @@ import { SendMessageService } from '@/server/actions/project';
 
 export interface MessageState {
   loading: boolean;
-  sendMessage: (data: FormContact, event: any) => void;
+  sendMessage: (data: FormContact, event: any, project?: string) => void;
 }
 
 const useMessageStore = create<MessageState>((set) => ({
   loading: false,
-  sendMessage: (data, event) => {
+  sendMessage: (data, event, project) => {
     set({ loading: true });
-    SendMessageService(data)
+    SendMessageService(data, project)
       .then((res) => {
         if (res) {
           event.target.reset();
