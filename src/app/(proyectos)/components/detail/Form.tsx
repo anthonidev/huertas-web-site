@@ -3,9 +3,8 @@ import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
 import TextArea2 from '@/components/shared/form/TextArea2';
 import useMessageStore from '@/context/message-store';
-import { SendMessageService } from '@/server/actions/project';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
-import { useState } from 'react';
+import { Button } from '@nextui-org/react';
 import { Fade } from 'react-awesome-reveal';
 import { SubmitHandler } from 'react-hook-form';
 
@@ -20,7 +19,7 @@ const Form = ({ project, primary_color, secondary_color, tertiary_color }: Props
   const { loading, sendMessage } = useMessageStore();
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
-    sendMessage(data, event);
+    sendMessage(data, event, project);
   };
   return (
     <Fade triggerOnce direction="right">
@@ -134,13 +133,19 @@ const Form = ({ project, primary_color, secondary_color, tertiary_color }: Props
                   })}
                 />
               </div>
-              <button className="pushable col-span-2 mt-5" type="submit" disabled={loading}>
+              <button
+                // isLoading={loading}
+                // isDisabled={loading}
+                className="pushable col-span-2 mt-5"
+                type="submit"
+                disabled={loading}
+              >
                 <span className="edge"></span>
                 <span
                   style={{ background: primary_color }}
                   className="front flex items-center justify-center uppercase text-white"
                 >
-                  Solicitar información
+                  {loading ? 'Enviando...' : 'Solicitar información'}
                 </span>
               </button>
 

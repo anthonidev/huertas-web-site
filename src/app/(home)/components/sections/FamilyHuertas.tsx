@@ -6,10 +6,10 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 
 type Props = {
   // comments: Comment[];
-  comments: any;
+  // comments: any;
 };
 
-export const FamilyHuertas = ({ comments }: Props) => {
+export const FamilyHuertas = ({}: Props) => {
   // const [render, setRender] = useState(false);
   // useEffect(() => {
   //   setRender(true);

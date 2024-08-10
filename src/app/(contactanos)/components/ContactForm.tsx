@@ -1,28 +1,20 @@
 'use client';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
 import Link from 'next/link';
-import { useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
 
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
 import TextArea2 from '@/components/shared/form/TextArea2';
+import useMessageStore from '@/context/message-store';
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { Button } from '@nextui-org/react';
 
 export const ContactForm = () => {
-  const [loading, setLoading] = useState(false);
+  const { loading, sendMessage } = useMessageStore();
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
-    setLoading(true);
-    // SendMessageSevice(data)
-    //   .then((send) => {
-    //     if (send) {
-    //       event.target.reset();
-    //     }
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
+    sendMessage(data, event);
   };
   return (
     <section className="my-10 bg-pattern p-5 lg:p-20" id="contactanos-form">
@@ -126,13 +118,15 @@ export const ContactForm = () => {
                   />
                 </div>
                 <div className="col-span-2 my-4 flex items-center justify-center">
-                  <button
+                  <Button
                     type="submit"
+                    isLoading={loading}
+                    isDisabled={loading}
                     className="rounded-xl bg-[#00861D] px-7 py-2 text-sm font-bold text-white"
                     disabled={loading}
                   >
                     Solicitar información
-                  </button>
+                  </Button>
                 </div>
 
                 <span className="col-span-2 mx-auto mb-5 max-w-sm text-center text-[10px] text-pri">

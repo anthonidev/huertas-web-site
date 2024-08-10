@@ -153,8 +153,7 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
         errorMessage={errors.amount?.message}
         {...register('amount', {
           required: 'Este campo es obligatorio',
-          min: { value: 5000, message: 'El monto mínimo es 5000' },
-          max: { value: 32000, message: 'El monto máximo es 32000' },
+          min: { value: 10, message: 'El monto mínimo es 10' },
           pattern: {
             value: /^(?!0\d)(?!.*\.\d{3,})\d*(?:\.\d{2})?$/,
             message: 'Solo se permiten números con hasta dos decimales',

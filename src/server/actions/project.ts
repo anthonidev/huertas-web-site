@@ -60,7 +60,6 @@ const getComments = async () => {
 
 const SendMessageService = async (data: FormContact, project?: string) => {
   if (project === undefined) project = '';
-
   const sendData = {
     first_name: data.firstname,
     last_name: data.lastname,
@@ -71,7 +70,7 @@ const SendMessageService = async (data: FormContact, project?: string) => {
   };
 
   try {
-    const res = await fetch(`${apiUrl}/api/web/leads/`, {
+    const res = await fetch(`${apiUrl}/api/web/leadweb/create/`, {
       method: 'POST',
       cache: 'no-store',
       headers: {
@@ -80,12 +79,12 @@ const SendMessageService = async (data: FormContact, project?: string) => {
       },
       body: JSON.stringify(sendData),
     });
+    console.log('RESPONSE', res);
     if (res.status === 404 || res.status === 500) {
       return false;
     }
     return true;
   } catch (error: any) {
-    console.log('ERRORRRRRR');
     return false;
   }
 };

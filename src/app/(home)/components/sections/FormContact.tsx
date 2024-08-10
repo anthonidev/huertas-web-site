@@ -90,7 +90,7 @@ const FormContact = () => {
                 <span className="edge"></span>
                 <span className="front flex flex-col items-center lg:flex-row">
                   <CursorArrowRaysIcon className="mr-2 h-5 w-5 animate-bounce group-hover:animate-none" />
-                  Solicitar información
+                  {loading ? 'Enviando...' : 'Solicitar información'}
                 </span>
               </button>
             </div>
