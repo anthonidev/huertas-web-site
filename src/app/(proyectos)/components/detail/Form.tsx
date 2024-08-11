@@ -1,10 +1,13 @@
 'use client';
+import { render } from '@react-email/render';
+import '@styles/emailcss.css';
+
+import EmailTemplateLead from '@/components/shared/EmailTemplateLead';
 import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
 import TextArea2 from '@/components/shared/form/TextArea2';
 import useMessageStore from '@/context/message-store';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
-import { Button } from '@nextui-org/react';
 import { Fade } from 'react-awesome-reveal';
 import { SubmitHandler } from 'react-hook-form';
 
@@ -19,8 +22,30 @@ const Form = ({ project, primary_color, secondary_color, tertiary_color }: Props
   const { loading, sendMessage } = useMessageStore();
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
-    sendMessage(data, event, project);
+    const finalHtml = render(
+      <EmailTemplateLead
+        name={data.firstname}
+        lastname={data.lastname}
+        email={data.email}
+        phone={data.phone}
+        message={data.message}
+      />,
+      { pretty: true },
+    );
+    const finalText = render(
+      <EmailTemplateLead
+        name={data.firstname}
+        lastname={data.lastname}
+        email={data.email}
+        phone={data.phone}
+        message={data.message}
+      />,
+      { plainText: true },
+    );
+
+    sendMessage(data, event, finalHtml, finalText, project);
   };
+
   return (
     <Fade triggerOnce direction="right">
       <FormData<FormContact> onSubmit={onSubmit}>

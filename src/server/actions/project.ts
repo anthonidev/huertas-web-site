@@ -58,7 +58,12 @@ const getComments = async () => {
   return comments;
 };
 
-const SendMessageService = async (data: FormContact, project?: string) => {
+const SendMessageService = async (
+  data: FormContact,
+  finalHtml: string,
+  finalText: string,
+  project?: string,
+) => {
   if (project === undefined) project = '';
   const sendData = {
     first_name: data.firstname,
@@ -83,6 +88,21 @@ const SendMessageService = async (data: FormContact, project?: string) => {
     if (res.status === 404 || res.status === 500) {
       return false;
     }
+
+    await fetch('/api/sendEmail.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'soporte@invertifast.pe',
+        to: 'softwaretoni21@gmail.com',
+        // subject: `Nuevo lead: ${formData.nombre} ${formData.apellido}`,
+        html: finalHtml,
+        text: finalText,
+      }),
+    });
+
     return true;
   } catch (error: any) {
     return false;
