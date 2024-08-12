@@ -42,7 +42,7 @@ const useMessageStore = create<MessageState>((set) => ({
             },
             body: JSON.stringify({
               from: 'soporte@invertifast.pe',
-              to: 'softwaretoni21@gmail.com',
+              to: 'leads@inmobiliariahuertas.com',
               subject: `Nuevo lead: ${data.firstname} ${data.lastname}`,
               html: finalHtml,
               text: finalText,
