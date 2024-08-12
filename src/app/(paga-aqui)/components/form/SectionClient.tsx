@@ -159,8 +159,8 @@ const SectionClient = ({ register, watch, setValue, errors }: Props) => {
             message: 'Solo se permiten números con hasta dos decimales',
           },
         })}
-        min={5000}
-        defaultValue={'5000'}
+        min={10}
+        defaultValue={'100'}
         type="decimal"
         startContent={
           <div className="text-gray-500">{watch('currency') === 'PEN' ? 'S/' : '$'}</div>

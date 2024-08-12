@@ -61,7 +61,7 @@ const EmailTemplateLead = ({ email, lastname, message, name, phone }: Props) => 
   return (
     <Html>
       <Head />
-      <Preview>Nuevo lead registrado en Invertifast 🎉</Preview>
+      <Preview>Nuevo lead registrado en Huertas Inmobiliaria 🎉</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={header}>
@@ -70,7 +70,8 @@ const EmailTemplateLead = ({ email, lastname, message, name, phone }: Props) => 
           <Section style={content}>
             <Text style={paragraph}>Hola equipo,</Text>
             <Text style={paragraph}>
-              Se ha registrado un nuevo lead en la página de Invertifast. Aquí están los detalles:
+              Se ha registrado un nuevo lead en la página de Huertas Inmobiliaria. Aquí están los
+              detalles:
             </Text>
             <Text style={paragraph}>
               <strong>📛 Nombre:</strong> {name} {lastname}
@@ -87,7 +88,7 @@ const EmailTemplateLead = ({ email, lastname, message, name, phone }: Props) => 
             <Text style={paragraph}>
               Saludos,
               <br />
-              El equipo de Invertifast 🚀
+              El equipo de Huertas Inmobiliaria 🚀
             </Text>
           </Section>
           <Hr style={hr} />

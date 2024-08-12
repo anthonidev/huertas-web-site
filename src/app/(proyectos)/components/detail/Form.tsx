@@ -10,6 +10,7 @@ import useMessageStore from '@/context/message-store';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
 import { Fade } from 'react-awesome-reveal';
 import { SubmitHandler } from 'react-hook-form';
+import Confetti from 'react-confetti';
 
 type Props = {
   project?: string;
@@ -19,7 +20,11 @@ type Props = {
 };
 
 const Form = ({ project, primary_color, secondary_color, tertiary_color }: Props) => {
-  const { loading, sendMessage } = useMessageStore();
+  const {
+    loading,
+    sendMessage,
+    confetti: { height, state, width },
+  } = useMessageStore();
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
     const finalHtml = render(
@@ -43,7 +48,7 @@ const Form = ({ project, primary_color, secondary_color, tertiary_color }: Props
       { plainText: true },
     );
 
-    sendMessage(data, event, finalHtml, finalText, project);
+    sendMessage(data, event, finalHtml, finalText, window.innerWidth, window.innerHeight, project);
   };
 
   return (
@@ -182,6 +187,7 @@ const Form = ({ project, primary_color, secondary_color, tertiary_color }: Props
           </div>
         )}
       </FormData>
+      {state && <Confetti width={width} height={height} />}
     </Fade>
   );
 };

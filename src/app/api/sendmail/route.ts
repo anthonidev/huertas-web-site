@@ -1,19 +1,19 @@
 import { Resend } from 'resend';
+import { NextRequest, NextResponse } from 'next/server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(
-  { Response }: { Response: any },
-  request: { body: { to: string; from: string; html: string; subject: string; text: string } },
-  { error }: { error: any },
-) {
+export async function POST(req: NextRequest) {
   try {
-    const body = request.body;
-    const { to, from, html, subject, text } = body;
+    // Leer el cuerpo de la solicitud
+    const { to, from, html, subject, text } = await req.json();
 
-    if (error) {
-      return Response.json({ error }, { status: 500 });
+    // Validar que todos los campos requeridos estén presentes
+    if (!to || !from || !html || !subject || !text) {
+      return NextResponse.json({ message: 'Todos los campos son requeridos' }, { status: 400 });
     }
+
+    // Enviar el correo utilizando Resend
     const send = await resend.emails.send({
       from,
       to,
@@ -22,12 +22,17 @@ export async function POST(
       text,
     });
 
-    if (send.data) {
-      return Response.json({ send }, { status: 200 });
+    // Verificar si el envío fue exitoso
+    if (send) {
+      return NextResponse.json({ message: 'Email sent', send }, { status: 200 });
     } else {
-      return Response.json({ send }, { status: 500 });
+      return NextResponse.json({ message: 'Error al enviar el email' }, { status: 500 });
     }
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    // Manejo de errores
+    return NextResponse.json(
+      { message: 'Error al procesar la solicitud', error: error },
+      { status: 500 },
+    );
   }
 }

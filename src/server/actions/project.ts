@@ -58,12 +58,7 @@ const getComments = async () => {
   return comments;
 };
 
-const SendMessageService = async (
-  data: FormContact,
-  finalHtml: string,
-  finalText: string,
-  project?: string,
-) => {
+const SendMessageService = async (data: FormContact, project?: string) => {
   if (project === undefined) project = '';
   const sendData = {
     first_name: data.firstname,
@@ -73,6 +68,7 @@ const SendMessageService = async (
     message: data.message,
     project_lead: project,
   };
+  let response = false;
 
   try {
     const res = await fetch(`${apiUrl}/api/web/leadweb/create/`, {
@@ -85,27 +81,14 @@ const SendMessageService = async (
       body: JSON.stringify(sendData),
     });
     console.log('RESPONSE', res);
-    if (res.status === 404 || res.status === 500) {
-      return false;
+    if (res.status === 404 || res.status === 500 || res.status === 400) {
+      return response;
     }
-
-    await fetch('/api/sendEmail.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'soporte@invertifast.pe',
-        to: 'softwaretoni21@gmail.com',
-        // subject: `Nuevo lead: ${formData.nombre} ${formData.apellido}`,
-        html: finalHtml,
-        text: finalText,
-      }),
-    });
-
-    return true;
+    response = true;
+    return response;
   } catch (error: any) {
-    return false;
+    console.log('ERROR', error);
+    return response;
   }
 };
 

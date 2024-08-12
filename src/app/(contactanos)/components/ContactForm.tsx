@@ -3,18 +3,45 @@ import { onlyLetter, onlyNumber } from '@/utils/validate';
 import Link from 'next/link';
 import { SubmitHandler } from 'react-hook-form';
 
+import EmailTemplateLead from '@/components/shared/EmailTemplateLead';
 import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
 import TextArea2 from '@/components/shared/form/TextArea2';
 import useMessageStore from '@/context/message-store';
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { Button } from '@nextui-org/react';
-
+import { render } from '@react-email/render';
+import Confetti from 'react-confetti';
 export const ContactForm = () => {
-  const { loading, sendMessage } = useMessageStore();
+  const {
+    loading,
+    sendMessage,
+    confetti: { height, state, width },
+  } = useMessageStore();
 
   const onSubmit: SubmitHandler<FormContact> = (data, event: any) => {
-    sendMessage(data, event);
+    const finalHtml = render(
+      <EmailTemplateLead
+        name={data.firstname}
+        lastname={data.lastname}
+        email={data.email}
+        phone={data.phone}
+        message={data.message}
+      />,
+      { pretty: true },
+    );
+    const finalText = render(
+      <EmailTemplateLead
+        name={data.firstname}
+        lastname={data.lastname}
+        email={data.email}
+        phone={data.phone}
+        message={data.message}
+      />,
+      { plainText: true },
+    );
+
+    sendMessage(data, event, finalHtml, finalText, window.innerWidth, window.innerHeight);
   };
   return (
     <section className="my-10 bg-pattern p-5 lg:p-20" id="contactanos-form">
@@ -138,6 +165,7 @@ export const ContactForm = () => {
           )}
         </FormData>
       </div>
+      {state && <Confetti width={width} height={height} />}
     </section>
   );
 };
