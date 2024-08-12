@@ -19,7 +19,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
+      <Head>
+        <GoogleTagManager gtmId="GTM-MH9WCJSW" />
+      </Head>
       <body className={inter.className}>
         <noscript>
           <iframe
