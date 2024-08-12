@@ -68,6 +68,7 @@ const SendMessageService = async (data: FormContact, project?: string) => {
     message: data.message,
     project_lead: project,
   };
+  let response = false;
 
   try {
     const res = await fetch(`${apiUrl}/api/web/leadweb/create/`, {
@@ -80,12 +81,14 @@ const SendMessageService = async (data: FormContact, project?: string) => {
       body: JSON.stringify(sendData),
     });
     console.log('RESPONSE', res);
-    if (res.status === 404 || res.status === 500) {
-      return false;
+    if (res.status === 404 || res.status === 500 || res.status === 400) {
+      return response;
     }
-    return true;
+    response = true;
+    return response;
   } catch (error: any) {
-    return false;
+    console.log('ERROR', error);
+    return response;
   }
 };
 
