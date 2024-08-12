@@ -1,7 +1,5 @@
 'use client';
 import { render } from '@react-email/render';
-import '@styles/emailcss.css';
-
 import EmailTemplateLead from '@/components/shared/EmailTemplateLead';
 import FormData from '@/components/shared/form/FormData';
 import Input2 from '@/components/shared/form/Input2';
