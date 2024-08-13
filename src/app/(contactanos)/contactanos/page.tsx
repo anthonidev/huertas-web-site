@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { ContactForm, Hero } from '../components';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'Huertas Inmobiliaria - Contactanos',
@@ -12,6 +13,7 @@ export default function ContactPage() {
     <main>
       <Hero />
       <ContactForm />
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
     </main>
   );
 }

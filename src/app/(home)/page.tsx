@@ -4,6 +4,7 @@ import { FamilyHuertas, Featured, GetLandSteps, HowPay, TrustHuertas } from './c
 import { getComments, getProjects } from '@/server/actions/project';
 import SectionForm from './components/sections/SectionForm';
 import { AviableProjects } from '@/components/common/AviableProjects';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       </Suspense>
       <TrustHuertas />
       <GetLandSteps />
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
     </main>
   );
 }

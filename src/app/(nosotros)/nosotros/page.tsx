@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { Hero, InfoEnterprise, KnowProject } from './components';
 import { getProjects } from '@/server/actions/project';
 import ProjectsExp from './components/ProjectsExp';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export default function AboutPage() {
   return (
@@ -13,6 +14,7 @@ export default function AboutPage() {
       <Suspense fallback={<SkeletonCard />}>
         <ProjectsAsync />
       </Suspense>
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
     </main>
   );
 }

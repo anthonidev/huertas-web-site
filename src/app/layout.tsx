@@ -6,7 +6,6 @@ import HeadSocial from '@/components/shared/HeadSocial';
 import WhatsappButton from '@/components/shared/WhatsappButton';
 import { ProviderToast } from '@/components/providers/ProviderToast';
 import { Footer, Navbar } from '@/components/common';
-import Head from 'next/head';
 import { GoogleTagManager } from '@next/third-parties/google';
 const inter = Montserrat({ subsets: ['latin'] });
 
@@ -19,9 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <Head>
-        <GoogleTagManager gtmId="GTM-MH9WCJSW" />
-      </Head>
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
       <body className={inter.className}>
         <noscript>
           <iframe
