@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google';
 import { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
@@ -61,6 +62,7 @@ export default function TermPage() {
           </p>
         </div>
       </div>
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
     </main>
   );
 }

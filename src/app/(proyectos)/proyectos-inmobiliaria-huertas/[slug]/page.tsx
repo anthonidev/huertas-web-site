@@ -2,6 +2,7 @@ import LoadingPage from '@/components/shared/LoadingPage';
 import { getProject } from '@/server/actions/project';
 import { Suspense } from 'react';
 import ProjectDetail from '../../components/ProjectDetail';
+import { GoogleTagManager } from '@next/third-parties/google';
 export const dynamic = 'force-dynamic';
 
 interface Props {
@@ -24,6 +25,7 @@ async function ProjectAsync({ params }: { params: { slug: string } }) {
   return (
     <section>
       <ProjectDetail project={project} />
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
     </section>
   );
 }

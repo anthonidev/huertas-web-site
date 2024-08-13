@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { Featured } from '../components/Featured';
 import { AviableProjects } from '@/components/common/AviableProjects';
+import { GoogleTagManager } from '@next/third-parties/google';
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Huertas Inmobiliaria - Proyectos',
@@ -28,6 +29,7 @@ export default function ProjectsPage() {
           997 002 337
         </p>
       </div>
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
     </main>
   );
 }

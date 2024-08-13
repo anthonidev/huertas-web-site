@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import FormPayHere from '../components/form/FormPayHere';
+import { GoogleTagManager } from '@next/third-parties/google';
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Huertas Inmobiliaria - Paga aquí ',
@@ -57,6 +58,7 @@ export default function PayHerePage() {
           <FormPayHere />
         </div>
       </div>
+      <GoogleTagManager gtmId="GTM-MH9WCJSW" />
     </div>
   );
 }
