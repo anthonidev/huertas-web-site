@@ -1,8 +1,9 @@
 'use client';
 import { BeachIcon, CampoIcon } from '@/components/icons/Icons';
+import { PhoneIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Fade, Zoom } from 'react-awesome-reveal';
+import { Zoom } from 'react-awesome-reveal';
 
 export const Featured = () => {
   const text = '#TULOTEALTOKE'.split('');
@@ -20,6 +21,17 @@ export const Featured = () => {
     >
       <div className="mx-auto flex h-full max-w-7xl flex-col items-stretch justify-between px-4 sm:px-6 lg:flex-row lg:space-x-5 lg:px-8">
         <div className="mt-40 flex w-full flex-col items-center justify-around lg:mt-0">
+          <Link
+            href="tel:51948195923"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn_call my-5"
+          >
+            <div className="flex items-center justify-center space-x-2">
+              <PhoneIcon className="h-5 w-5 text-white" />
+              <span>¡Llame ahora!</span>
+            </div>
+          </Link>
           <h1 className="text-4xl font-extrabold uppercase tracking-tighter text-white lg:text-6xl">
             {text.map((el, i) => (
               <motion.span

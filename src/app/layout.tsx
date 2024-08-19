@@ -7,6 +7,7 @@ import WhatsappButton from '@/components/shared/WhatsappButton';
 import { ProviderToast } from '@/components/providers/ProviderToast';
 import { Footer, Navbar } from '@/components/common';
 import { GoogleTagManager } from '@next/third-parties/google';
+import CallButton from '@/components/shared/CallButton';
 const inter = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
           <WhatsappButton />
+          <CallButton />
           <ProviderToast />
         </ProviderUI>
       </body>

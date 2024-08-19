@@ -1,5 +1,56 @@
 'use server';
 const apiUrl = process.env.API_URL;
+
+const generateViewerId = () => {
+  return 'xxxx-xxxx-xxxx-xxxx'.replace(/[x]/g, () => {
+    const r = (Math.random() * 16) | 0;
+    return r.toString(16);
+  });
+};
+const getDeviceInfo = () => {
+  return {
+    deviceType: /Mobile|Android|iPad|iPhone|iPod/.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
+    deviceOS: navigator.platform,
+    browserType: navigator.userAgent,
+  };
+};
+
+const getProject = async (slug: string) => {
+  // Generar y establecer el viewer_id si no existe
+  let viewerId = localStorage.getItem('viewer_id');
+  if (!viewerId) {
+    viewerId = generateViewerId();
+    localStorage.setItem('viewer_id', viewerId);
+  }
+
+  // Obtener la información del navegador
+  const userAgent = navigator.userAgent || '';
+  const { deviceType, deviceOS, browserType } = getDeviceInfo();
+  const referrerUrl = document.referrer || '';
+  try {
+    const res = await fetch(`${apiUrl}/api/web/front/projects/client/${slug}/`, {
+      cache: 'no-store',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'User-Agent': userAgent,
+        'X-Viewer-Id': viewerId,
+        'X-Device-OS': deviceOS,
+        'X-Browser-Type': browserType,
+        'X-Device-Type': deviceType,
+        'X-Referrer-URL': referrerUrl,
+      },
+    });
+
+    if (res.status === 404 || res.status === 500) {
+      // throw new Error(`Request failed with status code ${res.status}`);
+      return false;
+    }
+    return (await res.json()) as ProjectDetail;
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+};
 const getProjects = async () => {
   try {
     const res = await fetch(`${apiUrl}/api/web/front/projects/client/`, {
@@ -19,25 +70,6 @@ const getProjects = async () => {
     }
   } catch (error: any) {
     return false;
-  }
-};
-
-const getProject = async (slug: string) => {
-  try {
-    const res = await fetch(`${apiUrl}/api/web/front/projects/client/${slug}/`, {
-      cache: 'no-store',
-      headers: {
-        Accept: 'application/json',
-      },
-    });
-
-    if (res.status === 404 || res.status === 500) {
-      // throw new Error(`Request failed with status code ${res.status}`);
-      return false;
-    }
-    return (await res.json()) as ProjectDetail;
-  } catch (error: any) {
-    throw new Error(error.message);
   }
 };
 
