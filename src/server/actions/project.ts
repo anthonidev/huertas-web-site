@@ -17,28 +17,28 @@ const getDeviceInfo = () => {
 
 const getProject = async (slug: string) => {
   // Generar y establecer el viewer_id si no existe
-  let viewerId = localStorage.getItem('viewer_id');
-  if (!viewerId) {
-    viewerId = generateViewerId();
-    localStorage.setItem('viewer_id', viewerId);
-  }
+  // let viewerId = localStorage?.getItem('viewer_id');
+  // if (!viewerId) {
+  //   viewerId = generateViewerId();
+  //   localStorage.setItem('viewer_id', viewerId);
+  // }
 
   // Obtener la información del navegador
-  const userAgent = navigator.userAgent || '';
-  const { deviceType, deviceOS, browserType } = getDeviceInfo();
-  const referrerUrl = document.referrer || '';
+  // const userAgent = navigator.userAgent || '';
+  // const { deviceType, deviceOS, browserType } = getDeviceInfo();
+  // const referrerUrl = document.referrer || '';
   try {
     const res = await fetch(`${apiUrl}/api/web/front/projects/client/${slug}/`, {
       cache: 'no-store',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'User-Agent': userAgent,
-        'X-Viewer-Id': viewerId,
-        'X-Device-OS': deviceOS,
-        'X-Browser-Type': browserType,
-        'X-Device-Type': deviceType,
-        'X-Referrer-URL': referrerUrl,
+        // 'User-Agent': userAgent,
+        // 'X-Viewer-Id': viewerId,
+        // 'X-Device-OS': deviceOS,
+        // 'X-Browser-Type': browserType,
+        // 'X-Device-Type': deviceType,
+        // 'X-Referrer-URL': referrerUrl,
       },
     });
 
