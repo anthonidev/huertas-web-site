@@ -6,7 +6,7 @@ import FormContact from './FormContact';
 
 const SectionForm = () => {
   return (
-    <section className="bg-pattern p-5 lg:p-20" id="contactanos-form">
+    <section className="bg-pattern  md:mt-10  lg:p-20" id="contactanos-form">
       <div className="mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 md:flex-row lg:px-8">
         <div className="flex basis-1/2 flex-col space-y-7">
           <h1 className="w-36 border-b-4 border-pri text-3xl font-extrabold text-sec md:text-4xl lg:text-5xl">
