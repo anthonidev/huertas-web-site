@@ -15,7 +15,7 @@ const ProjectCard = ({
   par,
 }: Props) => {
   return (
-    <article className="group mx-auto my-10 max-w-7xl transform transition duration-500 ease-in-out hover:-translate-y-3">
+    <article className="group mx-auto bg-transparent my-10 max-w-7xl transform transition duration-500 ease-in-out hover:-translate-y-3">
       <Link href={`/proyectos-inmobiliaria-huertas/${slug}`}>
         <header className="mx-5 flex justify-end">
           <h3

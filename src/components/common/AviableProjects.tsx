@@ -19,7 +19,7 @@ export const AviableProjects = ({ projects }: Props) => {
           </Fade>
         </header>
         <JackInTheBox cascade triggerOnce={true}>
-          <ul className="grid grid-cols-1 gap-10 text-justify lg:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-10 text-justify lg:grid-cols-2 xl:grid-cols-2">
             {projects &&
               projects.map((project, index) => (
                 <li key={project.id}>

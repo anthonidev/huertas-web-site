@@ -71,10 +71,10 @@ const Galllery = ({ gallery, primary_color, secondary_color }: Props) => {
         </span>
       </div>
       <div className="mx-5 flex flex-col justify-end space-y-20 lg:flex-row">
-        <ObrasIcon
+        {/* <ObrasIcon
           className="absolute left-0 z-20 hidden h-[27rem] xl:block"
           style={{ color: secondary_color }}
-        />
+        /> */}
         {render && (
           <AliceCarousel
             mouseTracking
