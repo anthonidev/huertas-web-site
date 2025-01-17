@@ -89,6 +89,11 @@ const itemLegal = {
       href: './politica-de-privacidad',
       type: 'link',
     },
+    {
+      name: 'Libro de Reclamaciones',
+      href: './libro-de-reclamaciones',
+      type: 'link',
+    },
   ],
 };
 
