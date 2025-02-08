@@ -27,8 +27,7 @@ export const AviableProjects = ({ projects }: Props) => {
                     key={project.id}
                     project={project}
                     par={index % 2 === 0 ? true : false}
-                  />
-                </li>
+                  /> </li>
               ))}
           </ul>
         </JackInTheBox>

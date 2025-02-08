@@ -1,6 +1,6 @@
 import SkeletonCard from '@/components/shared/skeleton/Skeleton';
 import { Suspense } from 'react';
-import { FamilyHuertas, Featured, GetLandSteps, HowPay, TrustHuertas } from './components/sections';
+import { FamilyHuertas,  Featured,  GetLandSteps, HowPay, TrustHuertas } from './components/sections';
 import { getComments, getProjects } from '@/server/actions/project';
 import SectionForm from './components/sections/SectionForm';
 import { AviableProjects } from '@/components/common/AviableProjects';

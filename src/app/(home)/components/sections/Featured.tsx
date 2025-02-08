@@ -1,67 +1,131 @@
-'use client';
-import { BeachIcon, CampoIcon } from '@/components/icons/Icons';
-import { PhoneIcon } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+"use client"
+import React, { useState, useEffect } from 'react';
+import { HeartIcon, WrenchIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 import { Zoom } from 'react-awesome-reveal';
+import Link from 'next/link';
+import { BeachIcon, CampoIcon } from '@/components/icons/Icons';
 
 export const Featured = () => {
-  const text = '#TULOTEALTOKE'.split('');
+  const calculateTimeLeft = () => {
+    const startDate = new Date('2025-02-08T12:00:00');
+    const endDate = new Date('2025-02-14T12:00:00');
+    const now = new Date();
+    
+    if (now < startDate) {
+      const difference = endDate.getTime() - startDate.getTime();
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+    
+    if (now > endDate) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    
+    const difference = endDate.getTime() - now.getTime();
+    
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60)
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const newTimeLeft = calculateTimeLeft();
+      setTimeLeft(newTimeLeft);
+      
+      const startDate = new Date('2025-02-08T12:00:00').getTime();
+      const endDate = new Date('2025-02-14T12:00:00').getTime();
+      const now = new Date().getTime();
+      const totalDuration = endDate - startDate;
+      const elapsed = now - startDate;
+      const newProgress = Math.min(Math.max((elapsed / totalDuration) * 100, 0), 100);
+      setProgress(newProgress);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <header
-      id="featured"
-      className="flex min-h-screen flex-col justify-center"
-      style={{
-        backgroundImage: 'url("/imgs/montaje-banner-web.webp")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundBlendMode: 'overlay',
-        backgroundColor: 'rgba(0,0,0,0.2)',
-      }}
-    >
-      <div className="mx-auto flex h-full max-w-7xl flex-col items-stretch justify-between px-4 sm:px-6 lg:flex-row lg:space-x-5 lg:px-8">
-        <div className="mt-40 flex w-full flex-col items-center justify-around lg:mt-0">
-          <Link
-            href="tel:51948195923"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn_call my-5"
-          >
-            <div className="flex items-center justify-center space-x-2">
-              <PhoneIcon className="h-5 w-5 text-white" />
-              <span>¡Llame ahora!</span>
-            </div>
-          </Link>
-          <h1 className="text-4xl font-extrabold uppercase tracking-tighter text-white lg:text-6xl">
-            {text.map((el, i) => (
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 0.25,
-                  delay: i / 10,
-                }}
-                key={i}
-              >
-                {el}
-              </motion.span>
-            ))}
+    id="featured"
+    
+    className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-blue-950 to-blue-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex flex-col items-center justify-center space-y-16">
+          <h1 className="text-3xl md:text-5xl font-bold text-white text-center">
+            LANZAMIENTO DE UN NUEVO PROYECTO
           </h1>
-          <Zoom className="w-full">
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+            {[
+              { label: 'DÍAS', value: timeLeft.days, max: 6 },
+              { label: 'HORAS', value: timeLeft.hours, max: 24 },
+              { label: 'MINUTOS', value: timeLeft.minutes, max: 60 },
+              { label: 'SEGUNDOS', value: timeLeft.seconds, max: 60 }
+            ].map((item) => (
+              <div key={item.label} className="relative">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-green-700 bg-blue-900 flex items-center justify-center relative">
+                  <div 
+                    className="absolute inset-0 rounded-full border-4 border-green-500"
+                    style={{
+                      clipPath: `polygon(50% 50%, -50% -50%, ${Math.min((item.value / item.max) * 100, 100)}% 0%)`,
+                      transform: 'rotate(-90deg)'
+                    }}
+                  />
+                  <span className="text-3xl md:text-4xl font-bold text-white">
+                    {String(item.value).padStart(2, '0')}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm md:text-base text-gray-300 text-center font-medium tracking-wide">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="w-full max-w-3xl mx-auto">
+            <div className="h-10 bg-blue-900 rounded-full relative overflow-hidden border border-green-700">
+              <div className="absolute inset-0 flex items-center">
+                <div 
+                  className="relative transition-all duration-1000 ease-out"
+                  style={{ left: `${progress}%` }}
+                >
+                  <WrenchScrewdriverIcon
+                    className="text-orange-500 w-10 h-10"
+                  />
+                
+
+                </div>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-end px-4">
+                <div className="w-4 h-10 bg-green-500 rounded-sm" />
+              </div>
+            </div>
+          </div>
+          
+          <Zoom className="w-full max-w-2xl">
             <Link
               href="/proyectos-inmobiliaria-huertas"
-              className="group mx-auto mt-4 flex items-center justify-center rounded-full bg-white/80 px-4 py-2 text-base font-bold tracking-tighter shadow-2xl shadow-black transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-opacity-70 hover:bg-gradient-to-r hover:from-pri hover:to-sec hover:shadow-2xl sm:py-3 sm:text-2xl md:py-4 lg:w-3/4 2xl:py-6"
+              className="group mx-auto flex items-center justify-center gap-2 rounded-full bg-white/90 px-6 py-3 text-lg font-bold tracking-tight transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-green-600 hover:to-blue-600 hover:shadow-lg md:py-3 md:text-xl"
             >
               <CampoIcon
-                className="mr-2 w-12 text-pri group-hover:text-white lg:block"
-                width={85}
+                className="w-8 text-green-600 group-hover:text-white md:w-10"
+                width={40}
               />
-
-              <span className="text-pri group-hover:text-white">CAMPO O </span>
-              <span className="ml-2 text-sec group-hover:text-white">PLAYA </span>
+              <span className="text-green-600 group-hover:text-white">CAMPO</span>
+              <span className="mx-1 text-gray-400 group-hover:text-white">O</span>
+              <span className="text-blue-600 group-hover:text-white">PLAYA</span>
               <BeachIcon
-                className="mr-2 w-12 text-sec group-hover:text-white lg:block"
-                width={85}
+                className="w-8 text-blue-600 group-hover:text-white md:w-10"
+                width={40}
               />
             </Link>
           </Zoom>
@@ -70,3 +134,5 @@ export const Featured = () => {
     </header>
   );
 };
+
+export default Featured;
