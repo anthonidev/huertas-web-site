@@ -10,7 +10,7 @@ const WhatsappButton = () => {
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 z-40 animate-bounce cursor-pointer rounded-full"
     >
-      <Image src="/imgs/button_wtsp.png" alt="Whatsapp" width={220} height={220} />
+      <Image src="/imgs/button_wtsp.png" alt="Whatsapp" width={200} height={200} />
     </Link>
   );
 };

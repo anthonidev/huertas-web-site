@@ -496,3 +496,105 @@ html {
     filter: brightness(1.4);
   }
 }
+
+@layer components {
+  .cls-1 {
+    fill: #f8e384;
+  }
+  .cls-2 {
+    fill: #6a5857;
+  }
+  .cls-3 {
+    fill: #f1b156;
+  }
+  .cls-4 {
+    fill: #eab18a;
+  }
+  .cls-5 {
+    fill: #e7e9dc;
+  }
+  .cls-6 {
+    fill: #f5c766;
+  }
+  .cls-7 {
+    fill: #eb8e4a;
+  }
+  .cls-8 {
+    fill: #eb9650;
+  }
+  .cls-9 {
+    fill: #f2cca7;
+  }
+  .cls-10 {
+    fill: #eda051;
+  }
+  .cls-11 {
+    fill: #fdfdff;
+  }
+  .cls-12 {
+    fill: #6b878c;
+  }
+  .cls-13 {
+    fill: #806b6f;
+  }
+  .cls-14 {
+    fill: #928180;
+  }
+  .cls-15 {
+    fill: #c35325;
+  }
+  .cls-16 {
+    fill: #938578;
+  }
+  .cls-17 {
+    fill: #cdb9a8;
+  }
+  .cls-18 {
+    fill: #aa4a22;
+  }
+  .cls-19 {
+    fill: #d97e61;
+  }
+  .cls-20 {
+    fill: #d96b37;
+  }
+  .cls-21 {
+    fill: #a7988c;
+  }
+  .cls-22 {
+    fill: #c4694d;
+  }
+  .cls-23 {
+    fill: #d18f6d;
+  }
+  .cls-24 {
+    fill: #df7e3d;
+  }
+  .cls-25 {
+    fill: #afbbb4;
+  }
+  .cls-26 {
+    fill: #e0cab7;
+  }
+  .cls-27 {
+    fill: #868c87;
+  }
+  .cls-28 {
+    fill: #55555c;
+  }
+  .cls-29 {
+    fill: #3d3446;
+  }
+  .cls-30 {
+    fill: #4c393a;
+  }
+  .cls-31 {
+    fill: #613426;
+  }
+  .cls-32 {
+    fill: #604c4f;
+  }
+  .cls-33 {
+    fill: #516b75;
+  }
+}

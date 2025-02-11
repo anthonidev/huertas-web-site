@@ -8,6 +8,7 @@ import { ProviderToast } from '@/components/providers/ProviderToast';
 import { Footer, Navbar } from '@/components/common';
 import { GoogleTagManager } from '@next/third-parties/google';
 import CallButton from '@/components/shared/CallButton';
+import CampoPlata from '@/components/shared/CampoPlata';
 const inter = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
           <WhatsappButton />
+          <CampoPlata />
           <CallButton />
           <ProviderToast />
         </ProviderUI>
