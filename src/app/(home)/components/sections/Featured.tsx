@@ -1,13 +1,13 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Zoom } from "react-awesome-reveal";
-import Link from "next/link";
-import { BeachIcon, CampoIcon, WorkerIcon } from "@/components/icons/Icons";
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Zoom } from 'react-awesome-reveal';
+import Link from 'next/link';
+import { BeachIcon, CampoIcon, WorkerIcon } from '@/components/icons/Icons';
 
 export const Featured = () => {
   const calculateTimeLeft = () => {
-    const startDate = new Date("2025-02-08T12:00:00");
-    const endDate = new Date("2025-02-22T12:00:00");
+    const startDate = new Date('2025-02-08T12:00:00');
+    const endDate = new Date('2025-03-02T20:00:00');
     const now = new Date();
 
     if (now < startDate) {
@@ -38,15 +38,12 @@ export const Featured = () => {
       const newTimeLeft = calculateTimeLeft();
       setTimeLeft(newTimeLeft);
 
-      const startDate = new Date("2025-02-08T12:00:00").getTime();
-      const endDate = new Date("2025-02-22T12:00:00").getTime();
+      const startDate = new Date('2025-02-08T12:00:00').getTime();
+      const endDate = new Date('2025-02-22T12:00:00').getTime();
       const now = new Date().getTime();
       const totalDuration = endDate - startDate;
       const elapsed = now - startDate;
-      const newProgress = Math.min(
-        Math.max((elapsed / totalDuration) * 100, 0),
-        100
-      );
+      const newProgress = Math.min(Math.max((elapsed / totalDuration) * 100, 0), 100);
       setProgress(newProgress);
     }, 1000);
 
@@ -62,9 +59,9 @@ export const Featured = () => {
          
           url(/imgs/fondo.jpg)
         `,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
       }}
     >
       {/* Decorative wave overlay */}
@@ -72,7 +69,7 @@ export const Featured = () => {
         className="absolute bottom-0 left-0 right-0 h-32 md:h-48"
         style={{
           background: 'url("/waves.svg") repeat-x bottom',
-          opacity: "0.1",
+          opacity: '0.1',
         }}
       />
 
@@ -91,9 +88,9 @@ export const Featured = () => {
 
           <div className="grid grid-cols-3 gap-6 rounded-2xl border border-white/10 bg-white/5 px-10 py-7 backdrop-blur-sm md:gap-12">
             {[
-              { label: "HORAS", value: timeLeft.hours, max: 144 },
-              { label: "MINUTOS", value: timeLeft.minutes, max: 60 },
-              { label: "SEGUNDOS", value: timeLeft.seconds, max: 60 },
+              { label: 'HORAS', value: timeLeft.hours, max: 144 },
+              { label: 'MINUTOS', value: timeLeft.minutes, max: 60 },
+              { label: 'SEGUNDOS', value: timeLeft.seconds, max: 60 },
             ].map((item) => (
               <div key={item.label} className="relative">
                 <div className="relative flex h-24 w-24 items-center justify-center rounded-full border-4 border-blue-300/20 bg-white/10 backdrop-blur-sm md:h-28 md:w-28">
@@ -102,13 +99,13 @@ export const Featured = () => {
                     style={{
                       clipPath: `polygon(50% 50%, -50% -50%, ${Math.min(
                         (item.value / item.max) * 100,
-                        100
+                        100,
                       )}% 0%)`,
-                      transform: "rotate(-90deg)",
+                      transform: 'rotate(-90deg)',
                     }}
                   />
                   <span className="text-4xl font-bold text-white md:text-5xl">
-                    {String(item.value).padStart(2, "0")}
+                    {String(item.value).padStart(2, '0')}
                   </span>
                 </div>
                 <p className="mt-4 text-center text-sm font-medium tracking-wider text-blue-200 md:text-lg">
