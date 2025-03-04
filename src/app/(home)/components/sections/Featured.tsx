@@ -39,8 +39,8 @@ export const Featured = () => {
       const newTimeLeft = calculateTimeLeft();
       setTimeLeft(newTimeLeft);
 
-      const startDate = new Date('2025-02-08T12:00:00').getTime();
-      const endDate = new Date('2025-02-22T12:00:00').getTime();
+      const startDate = new Date('2025-02-25T12:00:00').getTime();
+      const endDate = new Date('2025-03-09T12:00:00').getTime();
       const now = new Date().getTime();
       const totalDuration = endDate - startDate;
       const elapsed = now - startDate;
