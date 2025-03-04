@@ -6,8 +6,9 @@ import { BeachIcon, CampoIcon, WorkerIcon } from '@/components/icons/Icons';
 
 export const Featured = () => {
   const calculateTimeLeft = () => {
-    const startDate = new Date('2025-02-08T12:00:00');
-    const endDate = new Date('2025-03-07T20:00:00');
+    const startDate = new Date('2025-02-25T12:00:00');
+    const endDate = new Date('2025-03-09T12:00:00');
+
     const now = new Date();
 
     if (now < startDate) {
