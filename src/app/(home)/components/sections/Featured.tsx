@@ -6,7 +6,7 @@ import { BeachIcon, CampoIcon, WorkerIcon } from '@/components/icons/Icons';
 
 export const Featured = () => {
   const calculateTimeLeft = () => {
-    const startDate = new Date('2025-02-25T12:00:00');
+    const startDate = new Date('2025-03-10T10:00:00');
     const endDate = new Date('2025-03-14T12:00:00');
 
     const now = new Date();
@@ -39,7 +39,7 @@ export const Featured = () => {
       const newTimeLeft = calculateTimeLeft();
       setTimeLeft(newTimeLeft);
 
-      const startDate = new Date('2025-02-25T12:00:00').getTime();
+      const startDate = new Date('2025-03-10T10:00:00').getTime();
       const endDate = new Date('2025-03-14T12:00:00').getTime();
       const now = new Date().getTime();
       const totalDuration = endDate - startDate;
