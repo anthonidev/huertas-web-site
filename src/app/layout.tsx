@@ -9,6 +9,7 @@ import { Footer, Navbar } from '@/components/common';
 import { GoogleTagManager } from '@next/third-parties/google';
 import CallButton from '@/components/shared/CallButton';
 import CampoPlata from '@/components/shared/CampoPlata';
+import { ModalProvider } from '@/components/providers/ModalProvider';
 const inter = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CampoPlata />
           <CallButton />
           <ProviderToast />
+          <ModalProvider />
         </ProviderUI>
       </body>
     </html>
