@@ -6,6 +6,8 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { SendMessageService } from '@/server/actions/project';
 import { toast } from 'react-toastify';
 import { onlyLetter, onlyNumber } from '@/utils/validate';
+import { render } from '@react-email/render';
+import EmailTemplateLead from '@/components/shared/EmailTemplateLead';
 
 interface FormFinanciamiento {
   firstname: string;
@@ -40,7 +42,47 @@ const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
     };
 
     try {
+      // Generar el HTML y texto para el correo
+      const finalHtml = render(
+        <EmailTemplateLead
+          name={data.firstname}
+          lastname={data.lastname}
+          email="formulario modal inicial"
+          phone={data.phone}
+          message="Interesado en financiamiento directo sin intereses"
+        />,
+        { pretty: true }
+      );
+
+      const finalText = render(
+        <EmailTemplateLead
+          name={data.firstname}
+          lastname={data.lastname}
+          email="formulario modal inicial"
+          phone={data.phone}
+          message="Interesado en financiamiento directo sin intereses"
+        />,
+        { plainText: true }
+      );
+
+      // Primero enviar al CRM
       const result = await SendMessageService(formData);
+      
+      // Luego enviar el correo por Resend
+      await fetch('/api/sendmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: 'soporte@invertifast.pe',
+          to: 'ecamargo@inmobiliariahuertas.com',
+          subject: `Nuevo lead de modal: ${data.firstname} ${data.lastname}`,
+          html: finalHtml,
+          text: finalText,
+        }),
+      });
+
       if (result) {
         toast.success('¡Gracias por registrarte! Pronto te contactaremos');
         reset();
@@ -49,6 +91,7 @@ const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
         toast.error('Ocurrió un error al enviar tu información');
       }
     } catch (error) {
+      console.error('Error al enviar la información:', error);
       toast.error('Ocurrió un error inesperado');
     } finally {
       setLoading(false);
