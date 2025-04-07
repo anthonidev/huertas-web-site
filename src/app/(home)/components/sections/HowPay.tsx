@@ -7,11 +7,11 @@ export const HowPay = () => {
   return (
     <article id="como-pagar" className="bg-pattern py-20">
       <section className="mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly bg-cover bg-center px-4 sm:px-6 lg:px-8">
-        <header className="pt-20 font-light uppercase text-pri">
+        <header className="pt-20 font-light text-pri">
           <Fade triggerOnce={true} direction="left">
             <h2 className="text-base text-pri-200 md:text-xl lg:text-3xl xl:text-5xl">
-              <span className="text-2xl font-extrabold md:text-4xl lg:text-5xl xl:text-7xl">
-                ¡Qué hoy
+              <span className="mr-2 text-2xl font-extrabold md:text-4xl lg:text-5xl xl:text-7xl">
+                ¡Que hoy
               </span>
               sea tu mejor
             </h2>

@@ -29,6 +29,8 @@ export const BannerPrimary = ({
 }: Props) => {
   const words = slogan.split(' ');
   const lastWord = words[words.length - 1];
+
+  // Corrección de styleLastWord para manejar correctamente los espacios
   const styleLastWord = words.map((word, index) => {
     if (word === lastWord) {
       return (
@@ -37,7 +39,12 @@ export const BannerPrimary = ({
         </span>
       );
     }
-    return <span key={index}>{word} </span>;
+    return (
+      <span key={index}>
+        {word}
+        {index < words.length - 1 ? ' ' : ''}
+      </span>
+    );
   });
   return (
     <header
@@ -80,7 +87,7 @@ export const BannerPrimary = ({
               <span>{location}</span>
             </div>
             <span className="md:tex-2xl text-xl font-light">{km}</span>
-            <button className="pushable mt-5">
+            {/* <button className="pushable mt-5">
               <span className="edge"></span>
               <span
                 style={{ background: primary_color }}
@@ -88,7 +95,7 @@ export const BannerPrimary = ({
               >
                 Ver Proyecto
               </span>
-            </button>
+            </button> */}
           </div>
         </Fade>
         <Fade

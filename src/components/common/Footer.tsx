@@ -72,7 +72,7 @@ const itemQuienesSomos = {
   title: 'Quiénes somos',
   items: [
     { name: 'Acerca de Nosotros', href: '/nosotros', type: 'link' },
-    { name: 'Nuestros Proyectos', href: '/proyectos', type: 'link' },
+    { name: 'Nuestros Proyectos', href: '/proyectos-inmobiliaria-huertas', type: 'link' },
     { name: 'Refiere y Gana', href: '', type: 'text' },
   ],
 };

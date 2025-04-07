@@ -2,7 +2,7 @@
 import { BeachIcon, CampoIcon } from '@/components/icons/Icons';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Fade, Zoom } from 'react-awesome-reveal';
+import { Zoom } from 'react-awesome-reveal';
 
 export const Featured = () => {
   const text = '#TULOTEALTOKE'.split('');
@@ -41,14 +41,14 @@ export const Featured = () => {
               className="group mx-auto mt-4 flex items-center justify-center rounded-full bg-white/80 px-4 py-2 text-base font-bold tracking-tighter shadow-2xl shadow-black transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-opacity-70 hover:bg-gradient-to-r hover:from-pri hover:to-sec hover:shadow-2xl sm:py-3 sm:text-2xl md:py-4 lg:w-3/4 2xl:py-6"
             >
               <CampoIcon
-                className="mr-2 w-12 text-pri group-hover:text-white lg:block"
+                className="mr-2 w-12 text-sec group-hover:text-white lg:block"
                 width={85}
               />
 
-              <span className="text-pri group-hover:text-white">CAMPO O </span>
-              <span className="ml-2 text-sec group-hover:text-white">PLAYA </span>
+              <span className="text-sec group-hover:text-white">CAMPO o </span>
+              <span className="ml-2 text-pri group-hover:text-white">PLAYA </span>
               <BeachIcon
-                className="mr-2 w-12 text-sec group-hover:text-white lg:block"
+                className="mr-2 w-12 text-pri group-hover:text-white lg:block"
                 width={85}
               />
             </Link>

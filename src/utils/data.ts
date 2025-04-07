@@ -86,6 +86,7 @@ const stats = [
   },
 ];
 
+
 const stepsgetland = [
   {
     icon: StepSepIcon,
@@ -95,12 +96,12 @@ const stepsgetland = [
   },
   {
     icon: StepGetIcon,
-    title: 'Visitanos',
-    description: 'En nuestras oficinas para conocer nuestros proyectos',
+    title: 'Visítanos',
+    description: 'En nuestras oficinas para conocer nuestros proyectos.',
   },
   {
     icon: StepBuyIcon,
-    title: 'Compralo',
+    title: 'Cómpralo',
     description:
       'Accede al mejor precio ya sea al contado o con iniciales bajas.',
   },

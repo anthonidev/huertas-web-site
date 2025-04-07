@@ -55,7 +55,7 @@ export const ContactForm = () => {
             resolver todas sus dudas o preguntas que tenga respecto a nuestros proyectos.
           </p>
           <p className="text-pri">
-            ¡Ahora tener <strong> TÚ LOTE ES ALTOKE!</strong>
+            ¡Ahora tener <strong> TU LOTE ES ALTOKE!</strong>
           </p>
           <div className="flex flex-col space-y-2 text-pri">
             <Link href="tel:+51948195923" className="flex items-center justify-start space-x-3">

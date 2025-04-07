@@ -10,7 +10,7 @@ const CampoPlata = () => {
       >
         <CampoIcon className="w-8 text-green-600 group-hover:text-white md:w-10" width={40} />
         <span className="text-green-600 group-hover:text-white">CAMPO</span>
-        <span className="mx-2 text-gray-400 group-hover:text-white">O</span>
+        <span className="mx-2 text-gray-400 group-hover:text-white">o</span>
         <span className="text-blue-600 group-hover:text-white">PLAYA</span>
         <BeachIcon className="w-8 text-blue-600 group-hover:text-white md:w-10" width={40} />
       </Link>

@@ -6,7 +6,7 @@ import FormContact from './FormContact';
 
 const SectionForm = () => {
   return (
-    <section className="bg-pattern  md:mt-10  lg:p-20" id="contactanos-form">
+    <section className="bg-pattern md:mt-10 lg:p-20" id="contactanos-form">
       <div className="mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 md:flex-row lg:px-8">
         <div className="flex basis-1/2 flex-col space-y-7">
           <h1 className="w-36 border-b-4 border-pri text-3xl font-extrabold text-sec md:text-4xl lg:text-5xl">
@@ -17,7 +17,7 @@ const SectionForm = () => {
             resolver todas sus dudas o preguntas que tenga respecto a nuestros proyectos.
           </p>
           <p className="text-pri">
-            ¡Ahora tener <strong> TÚ LOTE ES ALTOKE!</strong>
+            ¡Ahora tener <strong> TU LOTE ES ALTOKE!</strong>
           </p>
           <div className="flex flex-col space-y-2 text-pri">
             <Link href="tel:+51948195923" className="flex items-center justify-start space-x-3">

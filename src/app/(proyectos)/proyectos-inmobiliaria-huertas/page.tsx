@@ -26,7 +26,7 @@ export default function ProjectsPage() {
           estamos para ti
         </p>
         <p className="mt-5 rounded-full bg-pri px-5 py-2 text-2xl font-extrabold text-white">
-          997 002 337
+        948 195 923
         </p>
       </div>
       <GoogleTagManager gtmId="GTM-MH9WCJSW" />
