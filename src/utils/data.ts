@@ -71,12 +71,12 @@ const stats = [
   },
   {
     icon: HandFamilyIcon,
-    title: '+ DE 4 PROYECTOS',
+    title: '+ DE 3 PROYECTOS',
     description: 'con la mejor eficiencia de construcción.',
   },
   {
     icon: HandFamilyIcon,
-    title: '+ DE 2,000',
+    title: '+ DE 3,000',
     description: 'Compraron en nuestros proyectos.',
   },
   {
